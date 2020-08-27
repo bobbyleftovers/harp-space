@@ -1,0 +1,40 @@
+.contact-us__content__inner {
+  padding-top: var(--padding-s);
+  padding-bottom: var(--padding-s);
+  text-align: center;
+}
+
+.contact-us__content {
+  @media (--m) {
+    display: flex;
+    align-items: flex-start;
+  }
+}
+
+.contact-us__form {
+  @media (--m) {
+    width: 50%;
+    margin-right: calc(var(--padding-s) / 2);
+  }
+}
+
+.contact-us__info {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media (--m) {
+    width: 50%;
+    margin-left: calc(var(--padding-s) / 2);
+  }
+}
+
+.contact-us__info__inner {
+  padding: var(--padding-s);
+  background: var(--c-lite-grey);
+
+  @media (--m) {
+    padding: var(--padding-m);
+  }
+}

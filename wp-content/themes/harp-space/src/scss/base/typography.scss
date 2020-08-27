@@ -1,0 +1,127 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: var(--c-black);
+  color: var(--c-lite-grey);
+
+  @include base-font;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.8em;
+
+  @media (--m) {
+    font-size: 1.4rem;
+  }
+}
+
+small,
+.small {
+  font-size: 1.3rem;
+
+  @media (--m) {
+    font-size: 1.3rem;
+  }
+}
+
+h1,
+.h1 {
+  font-family: var(--font-display-heading);
+  font-size: 2.3rem;
+  line-height: 1.2em;
+  font-weight: 600;
+
+  @media (--s) {
+    font-size: 3rem;
+  }
+
+  @media (--m) {
+    font-size: 5rem;
+  }
+}
+
+h2,
+label,
+.h2,
+.h3,
+.h4,
+.h6,
+.label {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1.3em;
+}
+
+h2,
+.h2 {
+  font-size: 1.7rem;
+
+  @media (--m) {
+    font-size: 3.5rem;
+  }
+}
+
+h3,
+.h3 {
+  font-size: 1.4rem;
+  font-weight: 500;
+
+  @media (--m) {
+    font-size: 2.4rem;
+  }
+}
+
+h4,
+.h4 {
+  font-size: 1.2rem;
+  font-weight: 500;
+
+  @media (--m) {
+    font-size: 1.6rem;
+  }
+}
+
+h5,
+.h5 {
+  font-size: 1.2rem;
+
+  @media (--m) {
+    font-size: 1.4rem;
+  }
+}
+
+label,
+.label {
+  font-size: 1rem;
+
+  @media (--m) {
+    font-size: 1.1rem;
+  }
+}
+
+a {
+  color: var(--c-blue);
+  text-decoration: underline;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.link {
+  @extend .label;
+
+  text-decoration: none;
+}
+
+.section-heading {
+  font-size: 1.8rem;
+
+  @media (--m) {
+    font-size: 2rem;
+  }
+}

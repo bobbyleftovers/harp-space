@@ -1,0 +1,8 @@
+{
+    "name": "lvb-main",
+    "authors": [],
+    "require": {},
+    "config": {
+        "vendor-dir": "lib/vendor"
+    }
+}

@@ -1,0 +1,34 @@
+/* critical:start */
+.hero--home {
+  // padding-top: calc(var(--padding-sm) / 2);
+}
+
+.hero__content {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  position: relative;
+}
+
+.hero__header {
+  margin-bottom: 15px;
+  color: var(--c-white);
+}
+
+.hero__subheader {
+  margin-bottom: 15px;
+  color: var(--c-mid-lite-grey);
+}
+
+.hero__image,
+.hero__video {
+  height: calc(calc(360 / 640) * 100vw);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+/* critical:end */

@@ -1,0 +1,41 @@
+.post-rows {
+  position: relative;
+}
+
+.post-rows__posts {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  list-style: none;
+
+  .post-card {
+    width: 100%;
+    margin-bottom: var(--padding-s);
+    flex: 1;
+
+    @media (--l) {
+      width: 32%;
+      flex: none;
+    }
+  }
+}
+
+.post-rows__cta {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.post-rows__pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .page-numbers {
+    padding: 0 10px;
+  }
+}

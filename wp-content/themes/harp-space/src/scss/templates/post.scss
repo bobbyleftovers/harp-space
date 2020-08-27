@@ -1,0 +1,118 @@
+/* critical:start */
+.post {
+  padding-top: calc(var(--padding-s) / 2);
+  text-align: left;
+
+  @media (--s) {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media (--m) {
+    padding-top: calc(var(--padding-sm) / 2);
+  }
+}
+
+.post__image {
+  @media (--s) {
+    width: 50%;
+  }
+}
+
+.post__image__inner {
+  @media (--s) {
+    position: sticky;
+    top: calc(calc($gutter-v-s / 2) + var(--nav-height-m));
+
+    @media (--m) {
+      top: calc(calc($gutter-v-m / 2) + var(--nav-height-l));
+    }
+  }
+}
+
+.post__image__image {
+  padding-top: calc(100% * calc(4 / 3));
+}
+
+.post__content {
+  margin-top: calc(var(--padding-s) / 2);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  @media (--s) {
+    width: 50%;
+    margin-top: 0;
+    margin-left: calc(var(--padding-s) / 2);
+  }
+
+  @media (--m) {
+    margin-left: var(--padding-sm);
+  }
+}
+
+.post__meta__item {
+  padding-right: 2em;
+  display: block;
+  + .post__meta__item {
+    padding-top: 2em;
+  }
+  @media (--s) {
+    + .post__meta__item {
+      padding-top: 0;
+    }
+    display: inline-block;
+  }
+}
+
+.post__meta__duration__icon,
+.post__meta__date__icon,
+.post__meta__social__icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 0.1em;
+  overflow: visible;
+
+  &.icon-facebook {
+    margin-right: -0.5em;
+  }
+}
+
+.post__meta__social__link {
+  text-decoration: none;
+  margin-left: 0.85em;
+  margin-right: 0.15em;
+
+  .post__meta__social__icon {
+    width: 2em;
+    height: 2em;
+    padding: 0.35em;
+  }
+}
+/* critical:end */
+
+.post__audio {
+  margin-top: calc(var(--padding-s) / 2);
+  @media (--m) {
+    margin-top: calc(var(--padding-sm) / 2);
+  }
+}
+
+.post__related,
+.post__related__grid {
+  overflow: hidden;
+  padding-top: calc(var(--padding-s) / 2);
+  @media (--m) {
+    padding-top: calc(var(--padding-sm) / 2);
+  }
+}
+
+.post__related__grid {
+  @media (--s) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

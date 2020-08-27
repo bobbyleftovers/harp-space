@@ -1,0 +1,68 @@
+{
+  "_args": [
+    [
+      "@barrelny/cli@1.0.7",
+      "/Users/robertrae/Sites/Milk/Liggett/liggett-vector-main/wp-content/themes/liggett"
+    ]
+  ],
+  "_development": true,
+  "_from": "@barrelny/cli@1.0.7",
+  "_id": "@barrelny/cli@1.0.7",
+  "_inBundle": false,
+  "_integrity": "sha512-MmjYGdKTuYXVmb5MSViPDoIK+40XLdVSJO7BmGmsbygcsribRsO2MhZ4M2q0u4FXK1ax+k/XF+mRuFpXnmusfQ==",
+  "_location": "/@barrelny/cli",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "@barrelny/cli@1.0.7",
+    "name": "@barrelny/cli",
+    "escapedName": "@barrelny%2fcli",
+    "scope": "@barrelny",
+    "rawSpec": "1.0.7",
+    "saveSpec": null,
+    "fetchSpec": "1.0.7"
+  },
+  "_requiredBy": [
+    "#DEV:/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@barrelny/cli/-/cli-1.0.7.tgz",
+  "_spec": "1.0.7",
+  "_where": "/Users/robertrae/Sites/Milk/Liggett/liggett-vector-main/wp-content/themes/liggett",
+  "author": {
+    "name": "maxrolon"
+  },
+  "bin": {
+    "brrl": "./index.js",
+    "brrl-install": "./install.js"
+  },
+  "dependencies": {
+    "@shopify/themekit": "^0.6.12",
+    "babel-minify-webpack-plugin": "^0.3.1",
+    "browser-sync": "^2.24.6",
+    "colors": "^1.3.1",
+    "commander": "^2.16.0",
+    "extract-text-webpack-plugin": "v4.0.0-beta.0",
+    "glob-all": "^3.1.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-wrapper": "^1.0.0",
+    "js-yaml": "^3.12.0",
+    "moment-timezone": "^0.5.21",
+    "shopify-node-api": "^1.8.0",
+    "webpack-dev-middleware": "^3.1.3",
+    "webpack-hot-middleware": "^2.22.3"
+  },
+  "description": "A build and deployment tool for the devs at Barrel",
+  "license": "MIT",
+  "main": "index.js",
+  "name": "@barrelny/cli",
+  "peerDependencies": {
+    "webpack": "^4.16.2",
+    "gulp": "^3.9.1"
+  },
+  "scripts": {
+    "publish": "npm publish --access public"
+  },
+  "version": "1.0.7"
+}

@@ -1,0 +1,43 @@
+:root {
+  --font-body: "Fira Sans", "Helvetica neue", "Helvetica", "Arial", sans-serif;
+  --font-display-heading: "Fira Sans", "Helvetica neue", "Helvetica", "Arial", sans-serif;
+  --font-heading: "Fira Sans", "Helvetica neue", "Helvetica", "Arial", sans-serif;
+
+  /* Containers */
+  --container-xs: 490px;
+  --container-s: 670px;
+  --container-m: 895px;
+  --container-l: 1040px;
+  --container-ml: 1200px;
+  --container-xl: 1400px;
+
+  /* Padding */
+  --padding-s: 40px;
+  --padding-sm: 50px;
+  --padding-m: 70px;
+  --padding-l: 80px;
+
+  /* Colors */
+  --c-white: #fff;
+  --c-black: #242020;
+  --c-blue: #64eadf;
+  --c-blue-dark: #3aaaa1;
+  --c-grey: #707070;
+  --c-dark-grey: #393535;
+  --c-med-grey: #706d6d;
+  --c-mid-lite-grey: #a4a1a1;
+  --c-lite-grey: #d8d8d8;
+
+  /* #0070af; */
+
+  /* Nav */
+  --nav-height-s: 55px;
+  --nav-height-m: 65px;
+  --nav-height-l: 80px;
+}
+
+/* media queries */
+@custom-media --s (min-width: 420px);
+@custom-media --m (min-width: 768px);
+@custom-media --l (min-width: 1000px);
+@custom-media --ml (min-width: 1200px);

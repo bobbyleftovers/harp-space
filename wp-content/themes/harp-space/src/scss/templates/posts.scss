@@ -1,0 +1,13 @@
+.page-template-page-posts {
+  .filters form {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+    .select-wrapper {
+      flex: 1;
+    }
+  }
+}

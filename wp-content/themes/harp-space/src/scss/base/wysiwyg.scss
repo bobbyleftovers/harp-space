@@ -1,0 +1,68 @@
+#tinymce,
+.wysiwyg {
+  * + * {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  .link {
+    color: var(--c-blue);
+    text-decoration: underline;
+    &:hover {
+      color: var(--c-blue-dark);
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: 0.5em;
+  }
+
+  * + h2,
+  * + h3,
+  * + h4,
+  * + h5,
+  * + h6 {
+    margin-top: 2.5em;
+  }
+
+  h2,
+  .main-heading {
+    font-size: 1.7rem;
+    @media (--m) {
+      font-size: 3.2rem;
+    }
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    @media (--m) {
+      font-size: 1.4rem;
+    }
+  }
+
+  h4,
+  .sub-heading {
+    @extend .label;
+  }
+
+  li {
+    @extend .bullet;
+  }
+
+  .secondary-sub-heading {
+  }
+
+  .intro-text {
+    @extend .small;
+  }
+
+  .byline {
+    @extend .small;
+    color: var(--c-lite-grey);
+  }
+}
