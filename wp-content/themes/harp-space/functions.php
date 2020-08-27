@@ -13,5 +13,3 @@ require_once( __DIR__ . '/lib/helpers/sub-nav-features.php' );
 require_once( __DIR__ . '/lib/helpers/sub-nav-mobile.php' );
 require_once( __DIR__ . '/lib/helpers/shortcodes.php' );
 require_once( __DIR__ . '/lib/vendor/acf.php' );
-require_once( __DIR__ . '/lib/vendor/gravity-forms.php' );
-require_once( __DIR__ . '/lib/vendor/search-wp.php' );
