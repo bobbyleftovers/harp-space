@@ -16,11 +16,11 @@ abstract class BB_Theme {
     add_action( 'after_setup_theme', array( &$this, 'add_theme_supports' ) );
 
     // Disable X-Pingback to header
-    add_filter( 'pings_open', '__return_false', PHP_INT_MAX );
-    add_filter( 'wp_headers', array( &$this, 'disable_pingbacks' ) );
+    // add_filter( 'pings_open', '__return_false', PHP_INT_MAX );
+    // add_filter( 'wp_headers', array( &$this, 'disable_pingbacks' ) );
 
-    add_filter( 'acf/settings/save_json', array( &$this, 'acf_json_save_point' ) );
-    add_filter( 'acf/settings/load_json', array( &$this, 'acf_json_load_point' ) );
+    // add_filter( 'acf/settings/save_json', array( &$this, 'acf_json_save_point' ) );
+    // add_filter( 'acf/settings/load_json', array( &$this, 'acf_json_load_point' ) );
   }
 
   // abstract protected function add_post_types();

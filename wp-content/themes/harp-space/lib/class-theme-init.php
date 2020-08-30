@@ -7,42 +7,78 @@ class Base_Theme extends BB_Theme {
 
   public function __construct(){
     parent::__construct();
-    $this->acf_json_path = TEMPLATEPATH . '/acf-json';
-    $this->cpt_json_path = TEMPLATEPATH . '/cpt-json';
+    // $this->  _json_path = TEMPLATEPATH . '/acf-json';
+    // $this->cpt_json_path = TEMPLATEPATH . '/cpt-json';
 
     add_action( 'after_setup_theme', array( &$this, 'register_menus' ) );
-    add_filter( 'image_size_names_choose', array( &$this, 'image_size_names_choose' ) );
+    // add_filter( 'image_size_names_choose', array( &$this, 'image_size_names_choose' ) );
     add_action( 'wp_enqueue_scripts', array( &$this, 'enqueue_scripts_and_styles' ) );
 
     add_action( 'wp_head', array(&$this, 'add_critical_css'), 1);
     add_action( 'wp_footer', array(&$this, 'load_rest_css') );
-    add_action( 'wp_footer', array(&$this, 'load_google_fonts') );
-    add_action( 'wp_footer', array(&$this, 'load_vimeo_scripts') );
+    // add_action( 'wp_footer', array(&$this, 'load_google_fonts') );
+    // add_action( 'wp_footer', array(&$this, 'load_vimeo_scripts') );
 
-    add_action( 'wp_head', array( &$this, 'print_site_favicons' ) );
+    // add_action( 'wp_head', array( &$this, 'print_site_favicons' ) );
 
-    add_filter( 'show_admin_bar', '__return_false' );
+    // add_filter( 'show_admin_bar', '__return_false' );
 
-    add_action( 'init', array( &$this, 'change_post_object_label' ) );
-    add_action( 'admin_menu', array( &$this, 'change_post_menu_label' ) );
+    // add_action( 'init', array( &$this, 'change_post_object_label' ) );
+    // add_action( 'admin_menu', array( &$this, 'change_post_menu_label' ) );
 
-    add_action( 'init', array( &$this, 'exclude_attachments_from_search' ) );
+    // add_action( 'init', array( &$this, 'exclude_attachments_from_search' ) );
 
-    add_shortcode( 'year', array( &$this, 'shortcode_year' ) );
+    // add_shortcode( 'year', array( &$this, 'shortcode_year' ) );
 
-    add_filter( 'tiny_mce_before_init', array( &$this, 'insert_formats' ) );
-    add_filter( 'mce_buttons_2', array( &$this, 'add_mce_button' ), 10, 2 );
-    add_filter( 'after_setup_theme', array( &$this, 'add_editor_styles' ), 10, 2 );
+    // add_filter( 'tiny_mce_before_init', array( &$this, 'insert_formats' ) );
+    // add_filter( 'mce_buttons_2', array( &$this, 'add_mce_button' ), 10, 2 );
+    // add_filter( 'after_setup_theme', array( &$this, 'add_editor_styles' ), 10, 2 );
 
     add_filter( 'init', array( &$this, 'add_post_types' ), 10, 2 );
     add_filter( 'init', array( &$this, 'add_taxonomies' ), 10, 2 );
-    add_filter( 'wp_nav_menu_items', array(&$this, 'add_to_nav'), 10, 2 );
+    // add_filter( 'wp_nav_menu_items', array(&$this, 'add_to_nav'), 10, 2 );
 
     // if you want to prevent acf from filtering wysiwyg editor fields
     // remove_filter( 'acf_the_content', array( &$this, 'wpautop') );
     add_filter( 'default_page_template_title', array(&$this, 'rename_default_template' ) );
 
-    $this->add_options_page();
+    $labels = array(
+      'name'                => 'Tracks',
+      'singular_name'       => 'Track',
+      'menu_name'           => 'Track List',
+      'parent_item_colon'   => 'Parent Item:',
+      'all_items'           => 'All Tracks',
+      'view_item'           => 'View Item',
+      'add_new_item'        => 'Add New Track',
+      'add_new'             => 'Add New',
+      'edit_item'           => 'Edit Track',
+      'update_item'         => 'Update Track',
+      'search_items'        => 'Search Tracks',
+      'not_found'           => 'Not found',
+      'not_found_in_trash'  => 'Not found in Trash',
+    );
+    $rewrite = array(
+      'slug'                => 'track',
+      'with_front'          => false,
+      'pages'               => true,
+      'feeds'               => true,
+    );
+    $args = array(
+      'label'               => 'track',
+      'labels'              => $labels,
+      'supports'            => array( 'title' ),
+      'hierarchical'        => false,
+      'menu_position'       => 9,
+      'publicly_queryable'  => true,
+      'query_var'           => true,
+      'public'              => true,
+      'rewrite'             => $rewrite,
+      'capability_type'     => 'post',
+      'show_in_rest'        => true
+    );
+    register_post_type( 'track', $args );
+
+    // $this->add_options_page();
     $this->register_image_sizes();
   }
 
@@ -92,20 +128,20 @@ class Base_Theme extends BB_Theme {
 
 
 
-  /**
-  * Add a global Theme Settings page in admin area
-  */
-  public function add_options_page() {
-    if ( function_exists('acf_add_options_page')) {
-      acf_add_options_page( array (
-        'page_title'  => __( 'Theme Options', self::$text_domain ),
-        'menu_title'  => 'Theme Options',
-        'menu_slug'   => 'theme-options',
-        'capability'  => 'administrator',
-        'redirect'    => false
-      ) );
-    }
-  }
+  // /**
+  // * Add a global Theme Settings page in admin area
+  // */
+  // public function add_options_page() {
+  //   if ( function_exists('acf_add_options_page')) {
+  //     acf_add_options_page( array (
+  //       'page_title'  => __( 'Theme Options', self::$text_domain ),
+  //       'menu_title'  => 'Theme Options',
+  //       'menu_slug'   => 'theme-options',
+  //       'capability'  => 'administrator',
+  //       'redirect'    => false
+  //     ) );
+  //   }
+  // }
 
   /**
   * Register post types used in this theme

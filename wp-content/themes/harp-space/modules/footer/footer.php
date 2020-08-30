@@ -10,14 +10,7 @@
       ?>
     </div>
     <div class="footer__block footer__block__meta small">
-      <p class="footer__copyright"><?= get_field( 'footer_copyright', 'option' ); ?></p>
-      <?php
-        // wp_nav_menu(array(
-        //   'theme_location' => 'footer-meta',
-        //   'container' => '',
-        //   'menu_class' => 'footer__meta'
-        // ));
-      ?>
+      <p class="footer__copyright"></p>
     </div>
   </div>
 </footer>

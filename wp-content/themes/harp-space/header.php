@@ -7,4 +7,4 @@
   </head>
   <body <?php body_class(); ?>>
   <?php do_action( "after_body_open" ); ?>
-  <?php the_module('header'); ?>
+  <?php //the_module('header'); ?>
