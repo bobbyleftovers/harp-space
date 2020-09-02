@@ -1,41 +1,41 @@
-import { on, select, selectAll, toggleClass, addClass, removeClass, hasClass, onFocus, onEscape, getData, setAttribute, getAttribute } from 'lib/dom'
-import { map } from 'lib/utils'
-
+import { on, select, selectAll, toggleClass, addClass, removeClass, hasClass, onFocus, onEscape, getData, setAttribute, getAttribute } from '../../src/js/lib/dom'
+import { map } from '../../src/js/lib/utils'
+console.log('header js')
 export default function (el) {
-  const slideoutToggle = selectAll('.js-slideout-toggle')
-  if (slideoutToggle) {
-    map((item) => {
-      on('click', () => {
-        toggleClass('slideout-activate', document.body)
-        removeClass('search-activate', document.body)
-        const classRemove = getData('remove-class', slideoutToggle)
-        const classRemoveTarget = getData('remove-class-target', slideoutToggle) || document.body
-        if (classRemove) {
-          removeClass(classRemove, select(classRemoveTarget, el))
-        }
-        if (getAttribute('aria-expanded', slideoutToggle) === 'false') {
-          setAttribute('aria-expanded', true, slideoutToggle)
-        } else {
-          setAttribute('aria-expanded', false, slideoutToggle)
-        }
-      }, item)
-    }, slideoutToggle)
-  }
+  // const slideoutToggle = selectAll('.js-slideout-toggle')
+  // if (slideoutToggle) {
+  //   map((item) => {
+  //     on('click', () => {
+  //       toggleClass('slideout-activate', document.body)
+  //       removeClass('search-activate', document.body)
+  //       const classRemove = getData('remove-class', slideoutToggle)
+  //       const classRemoveTarget = getData('remove-class-target', slideoutToggle) || document.body
+  //       if (classRemove) {
+  //         removeClass(classRemove, select(classRemoveTarget, el))
+  //       }
+  //       if (getAttribute('aria-expanded', slideoutToggle) === 'false') {
+  //         setAttribute('aria-expanded', true, slideoutToggle)
+  //       } else {
+  //         setAttribute('aria-expanded', false, slideoutToggle)
+  //       }
+  //     }, item)
+  //   }, slideoutToggle)
+  // }
 
-  const searchToggle = selectAll('.js-search-toggle')
-  if (searchToggle) {
-    map((item) => {
-      on('click', () => {
-        toggleClass('search-activate', document.body)
-        removeClass('slideout-activate', document.body)
-        if (getAttribute('aria-expanded', searchToggle) === 'false') {
-          setAttribute('aria-expanded', true, searchToggle)
-        } else {
-          setAttribute('aria-expanded', false, searchToggle)
-        }
-      }, item)
-    }, searchToggle)
-  }
+  // const searchToggle = selectAll('.js-search-toggle')
+  // if (searchToggle) {
+  //   map((item) => {
+  //     on('click', () => {
+  //       toggleClass('search-activate', document.body)
+  //       removeClass('slideout-activate', document.body)
+  //       if (getAttribute('aria-expanded', searchToggle) === 'false') {
+  //         setAttribute('aria-expanded', true, searchToggle)
+  //       } else {
+  //         setAttribute('aria-expanded', false, searchToggle)
+  //       }
+  //     }, item)
+  //   }, searchToggle)
+  // }
 
   function checkScroll (e) {
     const slideInDuration = 1000

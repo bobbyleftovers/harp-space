@@ -1,5 +1,5 @@
 /* global Element, getComputedStyle, CustomEvent */
-import {makeArray, curry, getProp, parseOptions, setProp, partial, pipe, map, whileDo} from 'lib/utils'
+import {makeArray, curry, getProp, parseOptions, setProp, partial, pipe, map, whileDo} from './utils'
 import Tweezer from 'tweezer.js'
 import {Promise} from 'es6-promise'
 

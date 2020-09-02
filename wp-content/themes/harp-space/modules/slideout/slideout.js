@@ -1,5 +1,5 @@
-import { on, select, selectAll, addClass, removeClass, hasClass, getModuleOptions, setStyle, setAttribute, closest } from 'lib/dom'
-import { map, partial, pipe } from 'lib/utils'
+import { on, select, selectAll, addClass, removeClass, hasClass, getModuleOptions, setStyle, setAttribute, closest } from '../../src/js/lib/dom'
+import { map, partial, pipe } from '../../src/js/lib/utils'
 
 const MODULE_NAME = 'slideout'
 console.log('slideout')

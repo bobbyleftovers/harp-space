@@ -1,4 +1,4 @@
-import { select, trigger, addClass, removeClass, getAttribute, onEnter, on } from 'lib/dom'
+import { select, trigger, addClass, removeClass, getAttribute, onEnter, on } from '../../src/js/lib/dom'
 
 const MODAL_ACTIVE_CLASS = 'video-modal--activate'
 const VIDEO_ACTIVE_CLASS = 'video--activate'

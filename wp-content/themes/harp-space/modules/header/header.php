@@ -4,10 +4,10 @@
   <div class="header__inner">
     <div class="header__logo">
       <a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php
-        // the_module('svg', array(
-        //   'icon' => 'logo',
-        //   'class' => 'logo header__logo__svg'
-        // )); ?>
+        the_module('image', array(
+          'icon' => 'logo',
+          'class' => 'logo header__logo__svg'
+        )); ?>
       </a>
     </div><?php
 

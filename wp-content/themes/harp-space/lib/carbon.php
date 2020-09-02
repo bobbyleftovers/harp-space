@@ -90,17 +90,13 @@ function attach_track_fields() {
             Field::make( 'file', 'the_track', 'MP3 File' )
                 ->set_type('audio')
                 ->set_conditional_logic( array(
-                    'field' => 'add_preview',
-                    'value' => 'yes'
-                ))
-                ->set_conditional_logic( array(
                     'relation' => 'AND', // Optional, defaults to "AND"
                     array(
                         'field' => 'add_preview',
                         'value' => 'yes', // Optional, defaults to "". Should be an array if "IN" or "NOT IN" operators are used.
                         'compare' => '=', // Optional, defaults to "=". Available operators: =, <, >, <=, >=, IN, NOT IN
                     )
-                ) ),
+                ) )
         ));
 }
 

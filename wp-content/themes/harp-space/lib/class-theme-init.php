@@ -269,14 +269,14 @@ class Base_Theme extends BB_Theme {
     }
     catch ( Exception $ex ){}
 
-    $script_path = THEME_URI . "/assets";
+    $script_path = THEME_URI . "/assets/js";
 
     // associative array with key-value pairs to be json encoded
     $wp_vars = array(
     );
 
     // scripts
-    wp_enqueue_script( $handle, "$script_path/main.min.js", null, $version, ( IS_DEV ? false : true ) );
+    wp_enqueue_script( $handle, "$script_path/main.js", null, $version, ( IS_DEV ? false : true ) );
     if ( !empty( $wp_vars ) )
     {
       wp_localize_script( $handle, 'wpVars', $wp_vars );
@@ -487,7 +487,7 @@ class Base_Theme extends BB_Theme {
       ?>
       <noscript id="deferred-styles">
         <link rel="stylesheet"
-            href="<?php echo esc_url( get_template_directory_uri() . '/assets/main.min.css?ver=' . $theme_ver ); ?>">
+            href="<?php echo esc_url( get_template_directory_uri() . '/assets/css/main.css?ver=' . $theme_ver ); ?>">
       </noscript>
       <script>
         var loadDeferredStyles = function () {

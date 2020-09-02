@@ -19,7 +19,7 @@ if (!isset($use_srcset)) {
   $use_srcset = true;
 }
 if (empty($image)) {
-  $image = get_field( 'featured_image', 'options' );
+  // $image = get_field( 'featured_image', 'options' );
 }
 ?>
 <figure class="js-wrap image <?= $class ?>" <?= $module; ?> <?= $attributes; ?>>

@@ -1,4 +1,4 @@
-import { on, select, addClass, removeClass, trigger } from 'lib/dom'
+import { on, select, addClass, removeClass, trigger } from '../../src/js/lib/dom'
 export default el => {
   const volumeToggle = select('.js-video-volume-toggle', el)
   const video = select('.js-video', el)

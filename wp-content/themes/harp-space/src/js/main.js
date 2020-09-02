@@ -1,5 +1,5 @@
-import init from 'lib/init-modules'
-import { addClass, hasClass } from 'lib/dom'
+import init from './lib/init-modules'
+import { addClass, hasClass } from './lib/dom'
 
 document.addEventListener('DOMContentLoaded', () => {
   // Init modules

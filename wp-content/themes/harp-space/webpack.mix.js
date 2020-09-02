@@ -1,4 +1,5 @@
-let mix = require('laravel-mix');
+let mix = require('laravel-mix')
+const path = require('path')
 
 /*
  |--------------------------------------------------------------------------
@@ -11,8 +12,60 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.js('src/main.js', 'assets/').sass('src/main.scss', 'assets/');
+mix.copy('src/scss/fonts', 'assets/fonts')
+.js('src/js/main.js', 'assets/js')
+.sass('src/scss/main.scss', 'assets/css')
+/***
+ * there is a postCss mix extension that can help process the modules in "/modules/**"
+ * it was attempted once but is not working yet. modules are installed
+ * and the postCSS task to handleit is in tasks/postcss-module-import
+ */
 
+mix.webpackConfig({
+	// devtool: 'cheap-module-source-map',
+  // entry: {
+  //   main: ['./src/scss/main.scss', './src/js/main.js']
+  // },
+  // output: {
+  //   path: path.join(__dirname, 'assets'),
+  //   filename: '[name].min.js'
+  // },
+  // module: {
+  //   rules: [
+  //     {
+  //       enforce: 'pre',
+  //       test: /\.js$/,
+  //       exclude: /node_modules/,
+  //       loader: 'eslint-loader'
+  //     },
+  //     {
+  //       test: /\.js$/,
+  //       use: [
+  //         'babel-loader'
+  //       ]
+  //     },
+  //     {
+  //       test: /\.s?css$/,
+  //       extract: true,
+  //       use: [
+  //         'style-loader',
+  //         'css-loader?importLoaders=1&minimize=1',
+  //         'postcss-loader'
+  //       ]
+  //     },
+  //     {
+  //       test: /\.(eot|svg|ttf|woff|woff2)$/,
+  //       loader: 'file-loader?name=/fonts/[name].[ext]'
+  //     }
+  //   ]
+  // },
+	resolve: {
+		alias: {
+			'lib': path.resolve(__dirname, 'src/js/lib'),
+			'modules-root': path.resolve(__dirname, 'modules')
+		}
+	}
+})
 // Full API
 // mix.js(src, output);
 // mix.react(src, output); <-- Identical to mix.js(), but registers React Babel compilation.
