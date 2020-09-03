@@ -141,7 +141,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.8em;
 
-  @media (--m) {
+  @include size--m {
     font-size: 1.4rem;
   }
 }
@@ -150,7 +150,7 @@ small,
 .small {
   font-size: 1.3rem;
 
-  @media (--m) {
+  @include size--m {
     font-size: 1.3rem;
   }
 }
@@ -163,11 +163,11 @@ h1,
   font-weight: 600;
   color: red!important;
 
-  @media (--s) {
+  @include size--s {
     font-size: 3rem;
   }
 
-  @media (--m) {
+  @include size--m {
     font-size: 5rem;
   }
 }
@@ -190,7 +190,7 @@ h2,
 .h2 {
   font-size: 1.7rem;
 
-  @media (--m) {
+  @include size--m {
     font-size: 3.5rem;
   }
 }
@@ -200,7 +200,7 @@ h3,
   font-size: 1.4rem;
   font-weight: 500;
 
-  @media (--m) {
+  @include size--m {
     font-size: 2.4rem;
   }
 }
@@ -210,7 +210,7 @@ h4,
   font-size: 1.2rem;
   font-weight: 500;
 
-  @media (--m) {
+  @include size--m {
     font-size: 1.6rem;
   }
 }
@@ -219,7 +219,7 @@ h5,
 .h5 {
   font-size: 1.2rem;
 
-  @media (--m) {
+  @include size--m {
     font-size: 1.4rem;
   }
 }
@@ -228,7 +228,7 @@ label,
 .label {
   font-size: 1rem;
 
-  @media (--m) {
+  @include size--m {
     font-size: 1.1rem;
   }
 }
@@ -251,7 +251,7 @@ a {
 .section-heading {
   font-size: 1.8rem;
 
-  @media (--m) {
+  @include size--m {
     font-size: 2rem;
   }
 }

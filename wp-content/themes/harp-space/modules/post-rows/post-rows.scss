@@ -17,7 +17,7 @@
     margin-bottom: var(--padding-s);
     flex: 1;
 
-    @media (--l) {
+    @include size--l {
       width: 32%;
       flex: none;
     }

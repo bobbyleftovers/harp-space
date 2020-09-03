@@ -15,6 +15,10 @@ const path = require('path')
 mix.copy('src/scss/fonts', 'assets/fonts')
 .js('src/js/main.js', 'assets/js')
 .sass('src/scss/main.scss', 'assets/css')
+.options({
+  processCssUrls: false
+})
+
 /***
  * there is a postCss mix extension that can help process the modules in "/modules/**"
  * it was attempted once but is not working yet. modules are installed

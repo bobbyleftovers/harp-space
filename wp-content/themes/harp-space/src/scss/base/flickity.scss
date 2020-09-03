@@ -41,11 +41,11 @@
     }
   }
 
-  @media (--s) {
+  @include size--s {
     display: block;
   }
 
-  @media (--m) {
+  @include size--m {
     bottom: -80px;
 
     &.next {
@@ -90,7 +90,7 @@
     }
   }
 
-  @media (--s) {
+  @include size--s {
     display: none;
   }
 }

@@ -26,7 +26,7 @@ $gutter-h-m: var(--padding-s);
 @mixin gutter-l {
   padding-left: $gutter-h-s;
 
-  @media (--m) {
+  @include size--m {
     padding-left: $gutter-h-m;
   }
 }
@@ -34,7 +34,7 @@ $gutter-h-m: var(--padding-s);
 @mixin gutter-r {
   padding-right: $gutter-h-s;
 
-  @media (--m) {
+  @include size--m {
     padding-right: $gutter-h-m;
   }
 }
@@ -42,7 +42,7 @@ $gutter-h-m: var(--padding-s);
 @mixin gutter-t {
   padding-top: $gutter-v-s;
 
-  @media (--m) {
+  @include size--m {
     padding-top: $gutter-v-m;
   }
 }
@@ -50,7 +50,7 @@ $gutter-h-m: var(--padding-s);
 @mixin gutter-b {
   padding-bottom: $gutter-v-s;
 
-  @media (--m) {
+  @include size--m {
     padding-bottom: $gutter-v-m;
   }
 }
@@ -65,7 +65,7 @@ $gutter-h-m: var(--padding-s);
 @mixin gutter-t--small {
   padding-top: calc($gutter-v-s / 2);
 
-  @media (--m) {
+  @include size--m {
     padding-top: calc($gutter-v-m / 2);
   }
 }
@@ -73,7 +73,7 @@ $gutter-h-m: var(--padding-s);
 @mixin gutter-b--small {
   padding-bottom: calc($gutter-v-s / 2);
 
-  @media (--m) {
+  @include size--m {
     padding-bottom: calc($gutter-v-m / 2);
   }
 }
@@ -163,7 +163,7 @@ $gutter-h-m: var(--padding-s);
     background: var(--c-dark-grey);
     transform: rotate3d(0, 0, 1, 4deg);
 
-    @media (--s) {
+    @include size--s {
       height: 40px;
       transform: rotate3d(0, 0, 1, 4deg);
     }
@@ -172,7 +172,7 @@ $gutter-h-m: var(--padding-s);
   &::before {
     top: -13px;
 
-    @media (--s) {
+    @include size--s {
       top: -18px;
     }
   }
@@ -180,7 +180,7 @@ $gutter-h-m: var(--padding-s);
   &::after {
     bottom: -13px;
 
-    @media (--s) {
+    @include size--s {
       bottom: -18px;
     }
   }
@@ -210,7 +210,7 @@ $gutter-h-m: var(--padding-s);
     border-top: 1px solid var(--c-lite-grey);
   }
 
-  @media (--m) {
+  @include size--m {
     &::before {
       left: $gutter-h-m;
       right: $gutter-h-m;
@@ -237,7 +237,7 @@ $gutter-h-m: var(--padding-s);
     border-bottom: 1px solid var(--c-lite-grey);
   }
 
-  @media (--m) {
+  @include size--m {
     &::before {
       left: $gutter-h-m;
       right: $gutter-h-m;
@@ -273,7 +273,7 @@ $gutter-h-m: var(--padding-s);
   color: var(--c-white);
   margin: 1.5rem auto 3rem;
 
-  @media (--l) {
+  @include size--l {
     text-align: right;
     z-index: 1;
     position: absolute;
@@ -293,7 +293,7 @@ $gutter-h-m: var(--padding-s);
     top: -1em;
     left: calc(50% - 7px);
 
-    @media (--l) {
+    @include size--l {
       left: auto;
       top: 0.75em;
       right: -1em;
@@ -303,7 +303,7 @@ $gutter-h-m: var(--padding-s);
   &--mobile {
     display: block;
 
-    @media (--m) {
+    @include size--m {
       display: none;
     }
   }
@@ -311,11 +311,11 @@ $gutter-h-m: var(--padding-s);
   &--tablet {
     display: none;
 
-    @media (--m) {
+    @include size--m {
       display: block;
     }
 
-    @media (--l) {
+    @include size--l {
       display: none;
     }
   }
@@ -323,7 +323,7 @@ $gutter-h-m: var(--padding-s);
   &--desktop {
     display: none;
 
-    @media (--l) {
+    @include size--l {
       display: block;
     }
   }
@@ -331,7 +331,7 @@ $gutter-h-m: var(--padding-s);
   &--horizontal {
     margin: 0 0 0 1.5em;
 
-    @media (--l) {
+    @include size--l {
       position: relative;
       top: auto;
       left: auto;
@@ -343,7 +343,7 @@ $gutter-h-m: var(--padding-s);
       top: 0.65em;
       left: -1.5em;
 
-      @media (--l) {
+      @include size--l {
         left: -1.5em;
         top: 0.65em;
         right: auto;
@@ -356,7 +356,7 @@ $gutter-h-m: var(--padding-s);
   width: 100%;
   margin-bottom: 2em;
 
-  @media (--l) {
+  @include size--l {
     max-width: 540px;
   }
 }

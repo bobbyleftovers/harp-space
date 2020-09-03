@@ -1,3 +1,4 @@
+import '@fortawesome/fontawesome-free/js/all.js'
 import init from './lib/init-modules'
 import { addClass, hasClass } from './lib/dom'
 

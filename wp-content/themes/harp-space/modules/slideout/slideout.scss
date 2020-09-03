@@ -23,7 +23,7 @@
   flex: 1 0 100%;
   width: 100%;
 
-  @media (--l) {
+  @include size--l {
     display: none;
   }
 }
@@ -196,11 +196,11 @@
   z-index: 3;
   top: var(--nav-height-s);
 
-  @media (--s) {
+  @include size--s {
     top: var(--nav-height-m);
   }
 
-  @media (--l) {
+  @include size--l {
     display: none;
   }
 }
@@ -220,7 +220,7 @@
     display: flex;
     transform: translateX(0);
 
-    @media (--l) {
+    @include size--l {
       display: none;
     }
   }
@@ -234,7 +234,7 @@
   .slideout {
     top: 0;
 
-    @media (--s) {
+    @include size--s {
       top: 0;
     }
   }

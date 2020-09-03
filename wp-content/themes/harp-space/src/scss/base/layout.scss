@@ -49,7 +49,7 @@ h6,
 .sup {
   margin-bottom: 2em;
 
-  @media (--s) {
+  @include size--s {
     margin-bottom: 3em;
   }
 }
@@ -57,7 +57,7 @@ h6,
 .sub {
   margin-top: 2em;
 
-  @media (--s) {
+  @include size--s {
     margin-top: 3em;
   }
 }
@@ -96,7 +96,7 @@ h6,
 .back-link-wrapper {
   padding-top: calc(var(--padding-s) / 2);
 
-  @media (--m) {
+  @include size--m {
     padding-top: calc(var(--padding-sm) / 2);
   }
 }

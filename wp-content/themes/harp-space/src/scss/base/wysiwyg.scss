@@ -33,14 +33,14 @@
   h2,
   .main-heading {
     font-size: 1.7rem;
-    @media (--m) {
+    @include size--m {
       font-size: 3.2rem;
     }
   }
 
   h3 {
     font-size: 1.2rem;
-    @media (--m) {
+    @include size--m {
       font-size: 1.4rem;
     }
   }

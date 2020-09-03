@@ -5,14 +5,14 @@
 }
 
 .contact-us__content {
-  @media (--m) {
+  @include size--m {
     display: flex;
     align-items: flex-start;
   }
 }
 
 .contact-us__form {
-  @media (--m) {
+  @include size--m {
     width: 50%;
     margin-right: calc(var(--padding-s) / 2);
   }
@@ -24,7 +24,7 @@
   flex-direction: column;
   justify-content: center;
 
-  @media (--m) {
+  @include size--m {
     width: 50%;
     margin-left: calc(var(--padding-s) / 2);
   }
@@ -34,7 +34,7 @@
   padding: var(--padding-s);
   background: var(--c-lite-grey);
 
-  @media (--m) {
+  @include size--m {
     padding: var(--padding-m);
   }
 }

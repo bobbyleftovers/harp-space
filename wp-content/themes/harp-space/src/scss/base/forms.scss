@@ -52,7 +52,7 @@
     opacity: 1;
   }
 
-  @media (--m) {
+  @include size--m {
     padding: 1.1em 1em;
   }
 }
@@ -82,7 +82,7 @@
         padding: 0;
 
         &.field-half {
-          @media (--m) {
+          @include size--m {
             width: 50%;
           }
         }

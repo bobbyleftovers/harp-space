@@ -37,7 +37,30 @@
 }
 
 /* media queries */
-@custom-media --s (min-width: 420px);
-@custom-media --m (min-width: 768px);
-@custom-media --l (min-width: 1000px);
-@custom-media --ml (min-width: 1200px);
+// These weren't working yet so I just used the ones below. Not sure what the advantage is for the upper ones really
+// @custom-media --s (min-width: 420px);
+// @custom-media --m (min-width: 768px);
+// @custom-media --l (min-width: 1000px);
+// @custom-media --ml (min-width: 1200px);
+
+@mixin size--s() {
+  @media(min-width: 420px){
+    @content
+  };
+}
+@mixin size--m() {
+  @media(min-width: 768px){
+    @content
+  };
+}
+@mixin size--l() {
+  @media(min-width: 1000px){
+    @content
+  };
+}
+@mixin size--xl(){
+  @media(min-width: 1200px){
+     @content
+   };
+}
+

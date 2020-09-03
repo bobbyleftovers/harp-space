@@ -33,6 +33,7 @@
     "vue-template-compiler": "^2.6.12"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.14.0",
     "dom-event": "^1.0.0",
     "es6-promise": "^4.2.8",
     "layzr.js": "^2.2.2",

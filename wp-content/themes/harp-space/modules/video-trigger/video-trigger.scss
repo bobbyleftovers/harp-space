@@ -39,7 +39,7 @@
     height: 80px;
     margin-bottom: 0.5em;
 
-    @media (--m) {
+    @include size--m {
       width: 100px;
       height: 100px;
     }

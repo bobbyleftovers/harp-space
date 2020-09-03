@@ -9,18 +9,18 @@
         }
 
         function get_sub_nav_features() {
-            $sub_nav_features = get_field( 'sub_nav_features', 'option' );
+            // $sub_nav_features = get_field( 'sub_nav_features', 'option' );
             $this->sub_nav_features = array();
 
-            if (!empty($sub_nav_features) && is_array($sub_nav_features)) {
-                foreach ( $sub_nav_features as $menu ) {
-                    if ( empty( $menu['menu_item_class'] ) ) {
-                        continue;
-                    }
+            // if (!empty($sub_nav_features) && is_array($sub_nav_features)) {
+            //     foreach ( $sub_nav_features as $menu ) {
+            //         if ( empty( $menu['menu_item_class'] ) ) {
+            //             continue;
+            //         }
 
-                    $this->sub_nav_features[ $menu['menu_item_class'] ] = $menu;
-                }
-            }
+            //         $this->sub_nav_features[ $menu['menu_item_class'] ] = $menu;
+            //     }
+            // }
         }
 
         function get_features( $classes ) {

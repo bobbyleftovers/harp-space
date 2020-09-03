@@ -9,7 +9,7 @@
     flex: 1;
     margin-bottom: 1.5rem;
 
-    @media (--m) {
+    @include size--m {
       margin-bottom: 3rem;
     }
   }
@@ -17,7 +17,7 @@
   .text-image__button {
     margin-bottom: var(--padding-s);
 
-    @media (--m) {
+    @include size--m {
       margin-bottom: calc(var(--padding-s) * 2);
     }
   }

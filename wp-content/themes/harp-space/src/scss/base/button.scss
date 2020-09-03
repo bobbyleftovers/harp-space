@@ -15,7 +15,7 @@
     border: 1px solid var(--c-white);
   }
 
-  @media (--m) {
+  @include size--m {
     padding: 1.25em var(--padding-s);
   }
 
@@ -38,7 +38,7 @@
   &--full-mobile {
     width: 100%;
 
-    @media (--m) {
+    @include size--m {
       width: auto;
     }
   }
