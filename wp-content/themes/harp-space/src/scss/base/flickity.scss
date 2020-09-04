@@ -25,7 +25,7 @@
 
   &:hover:not(:disabled) {
     .flickity-button-icon {
-      fill: var(--c-blue);
+      fill: var(--c-pink);
     }
   }
 
@@ -55,42 +55,5 @@
         transform: translateY(-90%);
       }
     }
-  }
-}
-
-.flickity-page-dots {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  padding: 0;
-
-  .dot {
-    width: 40px;
-    height: 40px;
-    padding: 0;
-    margin: 0;
-    border: none;
-
-    @extend .diamond;
-
-    &::after {
-      border-color: var(--c-lite-grey);
-      left: 25%;
-      width: 7px;
-      height: 7px;
-    }
-
-    &.is-selected {
-      &::after {
-        border-color: var(--c-blue);
-        background: var(--c-blue);
-      }
-    }
-  }
-
-  @include size--s {
-    display: none;
   }
 }

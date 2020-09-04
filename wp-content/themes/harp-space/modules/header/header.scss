@@ -1,35 +1,11 @@
 .header {
   overflow: visible;
   position: relative;
-  z-index: 5;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: var(--c-dark-grey);
-  transform: translateY(0%);
-
-  @extend .transition;
 
   .header__inner {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding-left: calc(var(--padding-s) / 2);
-    padding-right: 0;
-
-    @include size--s {
-      padding-left: calc(var(--padding-l) / 2);
-    }
-
-    @include size--m {
-      padding-right: calc(var(--padding-l) / 2);
-
-      &::after {
-        left: calc(var(--padding-l) / 2);
-        right: calc(var(--padding-l) / 2);
-      }
-    }
 
     .header__logo {
       height: auto;
@@ -39,69 +15,17 @@
         max-width: 100%;
       }
     }
+
+    .header__right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
   }
 
   @include size--m {
     overflow-y: visible;
-  }
-
-  &.is-scrolled-past {
-    position: fixed;
-    transform: translateY(0%);
-    top: 0;
-    left: 0;
-    right: 0;
-
-    body.search-activate & {
-      height: calc(var(--nav-height-s) * 2);
-
-      @include size--s {
-        height: calc(var(--nav-height-m) * 2);
-      }
-
-      @include size--m {
-        height: auto;
-      }
-    }
-
-    &:not(:hover) {
-      background: var(--c-dark-grey);
-
-      .header__mobile__toggle__bar {
-        background-color: var(--c-dark-grey);
-      }
-
-      .header__menu {
-        > .menu-item {
-          a:not(.button) {
-            color: var(--c-white);
-          }
-
-          &.current-menu-item {
-            a:not(.button) {
-              opacity: 0.6;
-            }
-          }
-        }
-      }
-    }
-
-    &.is-sliding-in {
-      transition: none;
-      transform: translateY(-100%);
-    }
-
-    + * {
-      margin-top: var(--nav-height-s);
-
-      @include size--s {
-        margin-top: var(--nav-height-m);
-      }
-
-      @include size--m {
-        margin-top: var(--nav-height-l);
-      }
-    }
   }
 }
 
@@ -127,7 +51,7 @@
 
     &.current-menu-item {
       a:not(.button) {
-        color: var(--c-blue);
+        color: var(--c-pink);
       }
     }
 
@@ -151,8 +75,12 @@
     &:hover,
     &.current-menu-item:hover {
       > a:not(.button) {
-        color: var(--c-blue);
+        color: var(--c-pink);
       }
+    }
+
+    &:last-of-type a{
+      padding-right: 0;
     }
   }
 }

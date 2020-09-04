@@ -20,13 +20,16 @@
   /* Colors */
   --c-white: #fff;
   --c-black: #242020;
-  --c-blue: #64eadf;
-  --c-blue-dark: #3aaaa1;
-  --c-grey: #707070;
-  --c-dark-grey: #393535;
+  --c-pink: #ff00ff;
+  --c-lite-grey: #bbbbbb;
+  --c-grey: #636363;
+  --c-dark-grey: #191919;
+
+  // not in use
+  --c-pink-dark: #3aaaa1;
   --c-med-grey: #706d6d;
   --c-mid-lite-grey: #a4a1a1;
-  --c-lite-grey: #d8d8d8;
+  
 
   /* #0070af; */
 
@@ -42,25 +45,3 @@
 // @custom-media --m (min-width: 768px);
 // @custom-media --l (min-width: 1000px);
 // @custom-media --ml (min-width: 1200px);
-
-@mixin size--s() {
-  @media(min-width: 420px){
-    @content
-  };
-}
-@mixin size--m() {
-  @media(min-width: 768px){
-    @content
-  };
-}
-@mixin size--l() {
-  @media(min-width: 1000px){
-    @content
-  };
-}
-@mixin size--xl(){
-  @media(min-width: 1200px){
-     @content
-   };
-}
-

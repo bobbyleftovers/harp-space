@@ -136,7 +136,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _src_js_lib_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../src/js/lib/utils */ "./src/js/lib/utils.js");
 
 
-console.log('header js');
 /* harmony default export */ __webpack_exports__["default"] = (function (el) {
   // const slideoutToggle = selectAll('.js-slideout-toggle')
   // if (slideoutToggle) {
@@ -204,32 +203,29 @@ console.log('header js');
       Object(_src_js_lib_dom__WEBPACK_IMPORTED_MODULE_0__["setAttribute"])('aria-hidden', false, subMenu);
       Object(_src_js_lib_dom__WEBPACK_IMPORTED_MODULE_0__["addClass"])('is-active', item.parentNode);
     });
-  }, subMenuItems);
-  var searchButton = Object(_src_js_lib_dom__WEBPACK_IMPORTED_MODULE_0__["select"])('.header__search__toggle');
-  Object(_src_js_lib_dom__WEBPACK_IMPORTED_MODULE_0__["onFocus"])(searchButton, function (searchButton) {
-    deactivateCurrentMenuItem();
-  }); // Disable click for menu items with children
-
-  var touchBody = Object(_src_js_lib_dom__WEBPACK_IMPORTED_MODULE_0__["select"])('.is-touch');
-
-  if (touchBody) {
-    var subMenuTouchItems = Object(_src_js_lib_dom__WEBPACK_IMPORTED_MODULE_0__["selectAll"])('#menu-main-navigation>.menu-item-has-children>a', touchBody);
-    Object(_src_js_lib_utils__WEBPACK_IMPORTED_MODULE_1__["map"])(function (item) {
-      Object(_src_js_lib_dom__WEBPACK_IMPORTED_MODULE_0__["on"])('click', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        Object(_src_js_lib_dom__WEBPACK_IMPORTED_MODULE_0__["addClass"])('is-active', item.parentNode);
-      }, item);
-    }, subMenuTouchItems);
-  }
+  }, subMenuItems); // const searchButton = select('.header__search__toggle')
+  // onFocus(searchButton, searchButton => {
+  //   deactivateCurrentMenuItem()
+  // })
+  // Disable click for menu items with children
+  // const touchBody = select('.is-touch')
+  // if (touchBody) {
+  //   const subMenuTouchItems = selectAll('#menu-main-navigation>.menu-item-has-children>a', touchBody)
+  //   map((item) => {
+  //     on('click', e => {
+  //       e.preventDefault()
+  //       e.stopPropagation()
+  //       addClass('is-active', item.parentNode)
+  //     }, item)
+  //   }, subMenuTouchItems)
+  // }
 
   Object(_src_js_lib_dom__WEBPACK_IMPORTED_MODULE_0__["on"])('click', function (e) {
     deactivateCurrentMenuItem();
   }, document.body);
   Object(_src_js_lib_dom__WEBPACK_IMPORTED_MODULE_0__["onEscape"])(document.body, function () {
     deactivateCurrentMenuItem();
-  });
-  window.addEventListener('scroll', checkScroll);
+  }); // window.addEventListener('scroll', checkScroll)
 });
 
 /***/ }),

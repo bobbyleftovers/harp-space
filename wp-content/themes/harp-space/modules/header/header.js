@@ -1,6 +1,6 @@
 import { on, select, selectAll, toggleClass, addClass, removeClass, hasClass, onFocus, onEscape, getData, setAttribute, getAttribute } from '../../src/js/lib/dom'
 import { map } from '../../src/js/lib/utils'
-console.log('header js')
+
 export default function (el) {
   // const slideoutToggle = selectAll('.js-slideout-toggle')
   // if (slideoutToggle) {
@@ -74,23 +74,23 @@ export default function (el) {
     })
   }, subMenuItems)
 
-  const searchButton = select('.header__search__toggle')
-  onFocus(searchButton, searchButton => {
-    deactivateCurrentMenuItem()
-  })
+  // const searchButton = select('.header__search__toggle')
+  // onFocus(searchButton, searchButton => {
+  //   deactivateCurrentMenuItem()
+  // })
 
   // Disable click for menu items with children
-  const touchBody = select('.is-touch')
-  if (touchBody) {
-    const subMenuTouchItems = selectAll('#menu-main-navigation>.menu-item-has-children>a', touchBody)
-    map((item) => {
-      on('click', e => {
-        e.preventDefault()
-        e.stopPropagation()
-        addClass('is-active', item.parentNode)
-      }, item)
-    }, subMenuTouchItems)
-  }
+  // const touchBody = select('.is-touch')
+  // if (touchBody) {
+  //   const subMenuTouchItems = selectAll('#menu-main-navigation>.menu-item-has-children>a', touchBody)
+  //   map((item) => {
+  //     on('click', e => {
+  //       e.preventDefault()
+  //       e.stopPropagation()
+  //       addClass('is-active', item.parentNode)
+  //     }, item)
+  //   }, subMenuTouchItems)
+  // }
 
   on('click', e => {
     deactivateCurrentMenuItem()
@@ -100,5 +100,5 @@ export default function (el) {
     deactivateCurrentMenuItem()
   })
 
-  window.addEventListener('scroll', checkScroll)
+  // window.addEventListener('scroll', checkScroll)
 }
