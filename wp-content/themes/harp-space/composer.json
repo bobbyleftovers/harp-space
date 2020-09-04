@@ -1,0 +1,12 @@
+{
+    "name": "harp",
+    "authors": [],
+    "minimum-stability": "dev",
+    "require": {
+        "htmlburger/carbon-fields": "^3.1",
+        "iamntz/carbon-fields-urlpicker": "v3.x-dev"
+    },
+    "config": {
+        "vendor-dir": "lib/vendor"
+    }
+}

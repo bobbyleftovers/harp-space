@@ -36,22 +36,29 @@ function attach_page_fields() {
         ->set_context( 'carbon_fields_after_title' )
         // ->add_tab( 'Hero', array(
         ->add_fields(array(
-            Field::make( 'image', 'cover_art', 'Cover Art' )
-                ->set_value_type( 'url' ),
+            Field::make( 'image', 'cover_art', 'Cover Art' ),
             Field::make( 'text', 'cover_art_subheader', 'Cover Art Subheader' ),
+            Field::make( 'text', 'title_eyebrow', 'Title Eyebrow Copy' ),
             Field::make( 'text', 'main_title', 'Main Title' ),
-            Field::make( 'image', 'title_image', 'Title Image' )
-                ->set_value_type( 'url' ),
+            Field::make( 'image', 'title_image', 'Title Image' ),
             Field::make( 'rich_text', 'hero_copy', 'Hero Copy' ),
-            Field::make( 'image', 'secondary_image', 'Secondary Image' )
-                ->set_value_type( 'url' ),
+            Field::make( 'text', 'liner_eyebrow', 'Secondary Image Eyebrow' ),
+            Field::make( 'image', 'secondary_image', 'Secondary Image' ),
             Field::make( 'complex', 'listen_links', 'Listen Links' )
                 ->add_fields( array(
                     Field::make( 'image', 'icon', 'Icon' ),
-                    Field::make( 'text', 'listen_url', 'URL' )
-                ))
-                ));
-    
+                    Field::make( 'urlpicker', 'listen_url', 'Link' )
+                )),
+            Field::make( 'text', 'hero_cta_header', 'CTA Header' ),
+            Field::make( 'text', 'hero_cta_subheader', 'CTA Subheader' ),
+            Field::make( 'urlpicker', 'hero_cta', 'Hero CTA' )
+        ));
+    Container::make( 'post_meta', 'Music' )
+        ->where( 'post_type', '=', 'page' )
+        ->set_context( 'carbon_fields_after_title' )
+        ->add_fields( array(
+            Field::make( 'text', 'music_header', 'Music Header' )
+        ));
     Container::make( 'post_meta', 'Video' )
         ->where( 'post_type', '=', 'page' )
         ->set_context( 'carbon_fields_after_title' )

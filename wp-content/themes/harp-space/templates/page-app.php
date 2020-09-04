@@ -5,56 +5,35 @@
   */
 ?>
 <?php get_header(); ?>
-<main id="main_content" itemprop="mainContentOfPage" tabindex="-1">
-<h1>CONTENT</h1><?php
-  
-//   the_module('hero', array(
-//     'class' => 'hero--home',
-//     'image' => get_field('hero_image'),
-//     'image_mobile' => get_field('hero_mobile_image')
-//   ));
-
-  // if( have_rows('page_features') ):
-  //   while ( have_rows('page_features') ) : the_row();
-  //     switch(get_row_layout()){
-  //       case 'page_intro':
-  //         the_module('text-image', array(
-  //           'class' => 'text-image--left',
-  //           'section_heading' => get_sub_field('side_header'),
-  //           'header' => get_sub_field('header'),
-  //           'subheader' => get_sub_field('subheader'),
-  //           'body' => get_sub_field('body'),
-  //           'image' => get_sub_field('image'),
-  //           'align' => get_sub_field('image_alignment')
-  //         ));
-  //       break;
-  //       case 'cards':
-  //         the_module('post-rows', array(
-  //           'categories' => get_sub_field('card_categories'),
-  //           'post_count' => get_sub_field('post_count'),
-  //           'side_header' => get_sub_field('side_header'),
-  //           'header' => get_sub_field('card_section_title'),
-  //           'subheader' => get_sub_field('card_section_subheader'),
-  //           'cta' => get_sub_field('cta')
-  //         ));
-  //       break;
-  //     }
-  //   endwhile;
-  // endif;
-  // if ( get_field('show_contact_form')) {
-  //   the_module('contact-form', array(
-  //     'class' => 'hero--home',
-  //     'image' => get_field('hero_image'),
-  //     'image_mobile' => get_field('hero_mobile_image')
-  //   ));
-  // }
-
-  // if ( get_field('show_social_links')) {
-  //   the_module('social-links', array(
-  //     'class' => 'hero--home',
-  //     'image' => get_field('hero_image'),
-  //     'image_mobile' => get_field('hero_mobile_image')
-  //   ));
-  // }?>
+<main id="main_content" itemprop="mainContentOfPage" tabindex="-1"><?php
+  the_module('hero', array(
+    'class' => 'hero--home',
+    'image' => carbon_get_the_post_meta('cover_art'),
+    'liner_eyebrow' => carbon_get_the_post_meta('liner_eyebrow'),
+    'secondary_image' => carbon_get_the_post_meta('secondary_image'),
+    'h1' => carbon_get_the_post_meta('main_title'),
+    'h1_eyebrow' => carbon_get_the_post_meta('title_eyebrow'),
+    'h1_image' => carbon_get_the_post_meta('title_image'),
+    'cover_subhead' => carbon_get_the_post_meta('cover_art_subheader'),
+    'copy' => apply_filters( 'the_content',carbon_get_the_post_meta('hero_copy')),
+    'link_set' => carbon_get_the_post_meta('listen_links')
+  ));?>
+  <section id="music"><?php
+    the_module('music', array(
+      'header' => carbon_get_the_post_meta('music_header')
+    ));?>
+  </section>
+  <section id="video"><?php
+    the_module('video', array(
+      'header' => carbon_get_the_post_meta('video_title'),
+      'video' => carbon_get_the_post_meta('video_embed')
+    ));?>
+  </section>
+  <section id="contact"><?php
+    the_module('contact', array(
+      'header' => carbon_get_the_post_meta('contact_title'),
+      'shortcode' => carbon_get_the_post_meta('contact_shortcode')
+    )); ?>
+  </section>
 </main>
 <?php get_footer(); ?>

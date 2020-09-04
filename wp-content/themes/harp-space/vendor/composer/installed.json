@@ -135,23 +135,26 @@
         "homepage": "http://carbonfields.net/"
     },
     {
-        "name": "iamntz/carbon-fields-urlpicker",
-        "version": "v3.x-dev",
-        "version_normalized": "3.9999999.9999999.9999999-dev",
+        "name": "kyosifov/carbon-fields-urlpicker",
+        "version": "1.0.3",
+        "version_normalized": "1.0.3.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/iamntz/carbon-fields-urlpicker.git",
-            "reference": "c8114eddd182ccd16e8cf031c7d317ee481c7d00"
+            "url": "https://github.com/Kaloyan98/carbon-fields-urlpicker.git",
+            "reference": "b7feeb616d1d7a478532887b15a388b5dfcd1ee4"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/iamntz/carbon-fields-urlpicker/zipball/c8114eddd182ccd16e8cf031c7d317ee481c7d00",
-            "reference": "c8114eddd182ccd16e8cf031c7d317ee481c7d00",
+            "url": "https://api.github.com/repos/Kaloyan98/carbon-fields-urlpicker/zipball/b7feeb616d1d7a478532887b15a388b5dfcd1ee4",
+            "reference": "b7feeb616d1d7a478532887b15a388b5dfcd1ee4",
             "shasum": ""
         },
-        "time": "2019-10-11T10:00:47+00:00",
+        "require": {
+            "htmlburger/carbon-fields": "^3"
+        },
+        "time": "2019-01-30T20:27:33+00:00",
         "type": "library",
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "files": [
                 "field.php"
@@ -168,10 +171,14 @@
             {
                 "name": "Ionuț Staicu",
                 "email": "github@iamntz.com"
+            },
+            {
+                "name": "Kaloyan",
+                "email": "kaloqn665@gmail.com"
             }
         ],
         "description": "Carbon Fields extension, that adds a URL picker field type.",
-        "homepage": "https://github.com/iamntz/carbon-fields-urlpicker",
+        "homepage": "https://github.com/kyosifov/carbon-fields-url",
         "keywords": [
             "carbon-field",
             "carbon-fields-urlpicker",

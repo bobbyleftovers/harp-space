@@ -1,20 +1,42 @@
-<?php
-$image = !empty($image) ? $image : get_the_post_thumbnail_url( $post->ID, 'large' );
-$content = false;
-if(get_field('add_title_subhead')){
-  $content = '<div class="hero__content">';
-  $content .= get_field('header') ? '<h1 class="hero__header">'.get_field('header').'</h1>' : null;
-  $content .= get_field('subheader') ? '<p  class="hero__subheader">'.get_field('subheader').'</p>' : null;
-  $content .= '</div>';
-}
-
-if( !empty($image) ) :?>
-  <section class="hero <?= $class; ?>"><?php
-    the_module('image', array(
-      'image' => $image,
-      'class' => 'hero__image',
-      'cover' => true,
-      'content' => $content
-    ));?>
-  </section><?php
-endif; ?>
+<section class="hero <?= $class; ?>">
+  <div class="container hero__inner">
+    <div class="hero__cover"><?php
+      the_module('image', array(
+        'image' => $image,
+        'class' => 'hero__image',
+        'contain' => true
+      ));?>
+      <span class="hero__cover-subhead"><?= $cover_subhead ?></span>
+      <div class="hero__link-set"><?php
+        foreach($link_set as $link){
+          echo '<a href="" class="link-set__link">';
+          the_module('image', array(
+            'image' => $link['icon'],
+            'class' => 'link-set__image',
+            'contain' => true
+          ));
+          echo '</a>';
+        }?>
+      </div>
+    </div>
+    <div class="hero__details">
+        <span class="details__eyebrow"><?= $title_eyebrow ?></span><?php
+        the_module('image', array(
+          'image' => $h1_image,
+          'class' => 'details__title-img'
+        ));?>
+        <span class="details__copy-eyebrow"><?= $liner_eyebrow ?></span><?php
+        the_module('image', array(
+          'image' => $secondary_image,
+          'class' => 'details__title-img'
+        ));?>
+        <div class="details__copy"><?= $copy ?></div>
+        <div class="details__cta"><?php
+          $cta = carbon_get_the_post_meta('hero_cta'); ?>
+          <h2 class="details-cta__header"><?= carbon_get_the_post_meta('hero_cta_header') ?></h2>
+          <span class="details-cta__subheader"><?= carbon_get_the_post_meta('hero_cta_subheader') ?></span>
+          <a href="<?= $cta['url'] ?>" target="_blank" class="btn"><?= $cta['anchor'] ?></a>
+        </div>
+    </div>
+  </div>
+</section>

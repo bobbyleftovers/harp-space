@@ -98,8 +98,7 @@ var map = {
 	"./image/image.js": "./modules/image/image.js",
 	"./post-rows/post-rows.js": "./modules/post-rows/post-rows.js",
 	"./slideout/slideout.js": "./modules/slideout/slideout.js",
-	"./video-embed/video-embed.js": "./modules/video-embed/video-embed.js",
-	"./video-modal/video-modal.js": "./modules/video-modal/video-modal.js"
+	"./video/video.js": "./modules/video/video.js"
 };
 
 
@@ -436,10 +435,10 @@ console.log('slideout');
 
 /***/ }),
 
-/***/ "./modules/video-embed/video-embed.js":
-/*!********************************************!*\
-  !*** ./modules/video-embed/video-embed.js ***!
-  \********************************************/
+/***/ "./modules/video/video.js":
+/*!********************************!*\
+  !*** ./modules/video/video.js ***!
+  \********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -498,98 +497,6 @@ __webpack_require__.r(__webpack_exports__);
       }
     }
   }, volumeToggle);
-});
-
-/***/ }),
-
-/***/ "./modules/video-modal/video-modal.js":
-/*!********************************************!*\
-  !*** ./modules/video-modal/video-modal.js ***!
-  \********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _src_js_lib_dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../src/js/lib/dom */ "./src/js/lib/dom.js");
-
-var MODAL_ACTIVE_CLASS = 'video-modal--activate';
-var VIDEO_ACTIVE_CLASS = 'video--activate';
-
-window.onYouTubeIframeAPIReady = function () {
-  Object(_src_js_lib_dom__WEBPACK_IMPORTED_MODULE_0__["trigger"])('yt-loaded', window);
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (function (el) {
-  var modalToggle = el;
-  var modalID = Object(_src_js_lib_dom__WEBPACK_IMPORTED_MODULE_0__["getAttribute"])('href', el);
-  var modal = Object(_src_js_lib_dom__WEBPACK_IMPORTED_MODULE_0__["select"])(modalID);
-  var closeButton = Object(_src_js_lib_dom__WEBPACK_IMPORTED_MODULE_0__["select"])('.js-close', modal);
-  var iframeWrapper = Object(_src_js_lib_dom__WEBPACK_IMPORTED_MODULE_0__["select"])('.js-video-iframe-wrapper', modal);
-  var iframe = Object(_src_js_lib_dom__WEBPACK_IMPORTED_MODULE_0__["select"])('iframe', iframeWrapper);
-  var vimeoPlayer = null;
-
-  var activateVideo = function activateVideo() {
-    return Object(_src_js_lib_dom__WEBPACK_IMPORTED_MODULE_0__["addClass"])(VIDEO_ACTIVE_CLASS, iframeWrapper);
-  };
-
-  var activateModalVideo = function activateModalVideo() {
-    setTimeout(function () {
-      return closeButton.focus();
-    }, 250);
-    Object(_src_js_lib_dom__WEBPACK_IMPORTED_MODULE_0__["addClass"])(MODAL_ACTIVE_CLASS, modal);
-  };
-
-  var deactivateModalVideo = function deactivateModalVideo() {
-    return Object(_src_js_lib_dom__WEBPACK_IMPORTED_MODULE_0__["removeClass"])(MODAL_ACTIVE_CLASS, modal);
-  };
-
-  var onPlayerReady = function onPlayerReady(event) {
-    if (modalToggle) {
-      Object(_src_js_lib_dom__WEBPACK_IMPORTED_MODULE_0__["on"])('click', function (e) {
-        e.preventDefault();
-        vimeoPlayer ? vimeoPlayer.play() : event.target.playVideo();
-        activateVideo();
-        activateModalVideo();
-      }, modalToggle);
-      Object(_src_js_lib_dom__WEBPACK_IMPORTED_MODULE_0__["onEnter"])(modalToggle, function (e) {
-        e.preventDefault();
-        vimeoPlayer ? vimeoPlayer.play() : event.target.playVideo();
-        activateVideo();
-        activateModalVideo();
-      });
-      Object(_src_js_lib_dom__WEBPACK_IMPORTED_MODULE_0__["on"])('click', function () {
-        vimeoPlayer ? vimeoPlayer.pause() : event.target.stopVideo();
-        deactivateModalVideo();
-      }, el);
-      Object(_src_js_lib_dom__WEBPACK_IMPORTED_MODULE_0__["on"])('click', function () {
-        vimeoPlayer ? vimeoPlayer.pause() : event.target.stopVideo();
-        deactivateModalVideo();
-      }, closeButton);
-      Object(_src_js_lib_dom__WEBPACK_IMPORTED_MODULE_0__["onEnter"])(closeButton, function (e) {
-        vimeoPlayer ? vimeoPlayer.pause() : event.target.stopVideo();
-        deactivateModalVideo();
-      });
-    }
-  };
-
-  Object(_src_js_lib_dom__WEBPACK_IMPORTED_MODULE_0__["on"])('yt-loaded', function () {
-    var player = new window.YT.Player(iframeWrapper, {
-      events: {
-        'onReady': onPlayerReady
-      }
-    });
-    return player;
-  }, window);
-  var checkForVimeo = setInterval(function () {
-    if (typeof window.Vimeo !== 'undefined') {
-      clearInterval(checkForVimeo);
-      vimeoPlayer = new window.Vimeo.Player(iframe);
-      vimeoPlayer.on('loaded', function () {
-        onPlayerReady();
-      });
-    }
-  }, 1000);
 });
 
 /***/ }),

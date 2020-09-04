@@ -290,10 +290,10 @@ class Base_Theme extends BB_Theme {
   */
   public function image_size_names_choose( $sizes ) {
     return array_merge( $sizes, array(
-      'tiny'   => __( 'Tiny Image', 'kupper' ),
-      'small'  => __( 'Small Image', 'kupper' ),
-      'medium' => __( 'Medium Image', 'kupper' ),
-      'large'  => __( 'Large Image', 'kupper' ),
+      'tiny'   => 'Tiny Image',
+      'small'  => 'Small Image',
+      'medium' => 'Medium Image',
+      'large'  => 'Large Image'
     ) );
   }
 

@@ -130,3 +130,14 @@ a {
 .post__tickets-button {
   margin-top: 20px;
 }
+
+.container {
+  padding: 15px;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1440px;
+
+  &--sm {
+    max-width: 960px;
+  }
+}

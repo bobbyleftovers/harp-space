@@ -4,10 +4,10 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitd4f143220bba9e7098c1b1768e5192b2
+class ComposerStaticInita3ec52428ceec8864fda337ef159c840
 {
     public static $files = array (
-        'c36202a7ae4f6da358466aaea5ae6ae2' => __DIR__ . '/..' . '/iamntz/carbon-fields-urlpicker/field.php',
+        'c4f392c65f1fd98d0f15a632078239d4' => __DIR__ . '/..' . '/kyosifov/carbon-fields-urlpicker/field.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -25,15 +25,15 @@ class ComposerStaticInitd4f143220bba9e7098c1b1768e5192b2
         ),
         'Carbon_Field_UrlPicker\\' => 
         array (
-            0 => __DIR__ . '/..' . '/iamntz/carbon-fields-urlpicker/core',
+            0 => __DIR__ . '/..' . '/kyosifov/carbon-fields-urlpicker/core',
         ),
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitd4f143220bba9e7098c1b1768e5192b2::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitd4f143220bba9e7098c1b1768e5192b2::$prefixDirsPsr4;
+            $loader->prefixLengthsPsr4 = ComposerStaticInita3ec52428ceec8864fda337ef159c840::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInita3ec52428ceec8864fda337ef159c840::$prefixDirsPsr4;
 
         }, null, ClassLoader::class);
     }
