@@ -127,10 +127,6 @@ a {
   color: var(--c-pink);
 }
 
-.post__tickets-button {
-  margin-top: 20px;
-}
-
 .container {
   padding: 15px;
   width: 100%;
@@ -141,3 +137,8 @@ a {
     max-width: 960px;
   }
 }
+
+.section-header {
+  text-align: center;
+}
+

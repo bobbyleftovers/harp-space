@@ -96,9 +96,9 @@
 var map = {
 	"./header/header.js": "./modules/header/header.js",
 	"./image/image.js": "./modules/image/image.js",
+	"./music/music.js": "./modules/music/music.js",
 	"./post-rows/post-rows.js": "./modules/post-rows/post-rows.js",
-	"./slideout/slideout.js": "./modules/slideout/slideout.js",
-	"./video/video.js": "./modules/video/video.js"
+	"./slideout/slideout.js": "./modules/slideout/slideout.js"
 };
 
 
@@ -288,6 +288,99 @@ updateLazyLoad().handlers(true);
 
 /***/ }),
 
+/***/ "./modules/music/music.js":
+/*!********************************!*\
+  !*** ./modules/music/music.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+// import { on, select, selectAll, toggleClass, addClass, removeClass, hasClass, onFocus, onEscape, getData, setAttribute, getAttribute } from '../../src/js/lib/dom'
+// import { map } from '../../src/js/lib/utils'
+var Music = /*#__PURE__*/function () {
+  function Music(el) {
+    _classCallCheck(this, Music);
+
+    this.el = el;
+    this.previews = el.querySelectorAll('.preview');
+    this.init();
+  }
+
+  _createClass(Music, [{
+    key: "init",
+    value: function init() {
+      var _this = this;
+
+      var self = this;
+      this.previews.forEach(function (preview) {
+        var track = preview.querySelector('audio');
+        var play = preview.querySelector('.preview__play');
+        var pause = preview.querySelector('.preview__pause');
+        var timer = preview.querySelector('.preview__timer');
+        timer.innerHTML = _this.getFormattedTime(track.currentTime);
+
+        track.ontimeupdate = function (e) {
+          timer.innerHTML = self.getFormattedTime(track.currentTime);
+        };
+
+        play.addEventListener('click', function (e) {
+          _this.deactivateAll();
+
+          preview.classList.add('is-playing');
+          track.play();
+        });
+        pause.addEventListener('click', function () {
+          preview.classList.remove('is-playing');
+          track.pause();
+        });
+      });
+    }
+  }, {
+    key: "getFormattedTime",
+    value: function getFormattedTime(ts) {
+      var sec = Math.floor(ts);
+      var min = Math.floor(sec / 60);
+      min = min >= 10 ? min : '0' + min;
+      sec = Math.floor(sec % 60);
+      sec = sec >= 10 ? sec : '0' + sec;
+      return min + ':' + sec;
+    }
+  }, {
+    key: "deactivateAll",
+    value: function deactivateAll() {
+      var _this2 = this;
+
+      this.previews.forEach(function (preview) {
+        preview.classList.remove('is-playing');
+        preview.querySelector('audio').pause();
+        preview.querySelector('audio').currentTime = 0;
+        preview.querySelector('.preview__timer').innerHTML = _this2.getFormattedTime(0);
+      });
+    }
+  }, {
+    key: "toggleTracklist",
+    value: function toggleTracklist() {
+      console.log('toggle tracks');
+    }
+  }]);
+
+  return Music;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (function (el) {
+  new Music(el);
+});
+
+/***/ }),
+
 /***/ "./modules/post-rows/post-rows.js":
 /*!****************************************!*\
   !*** ./modules/post-rows/post-rows.js ***!
@@ -337,7 +430,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var MODULE_NAME = 'slideout';
-console.log('slideout');
 /* harmony default export */ __webpack_exports__["default"] = (function (el) {
   var defaults = {
     item: '.menu-item-has-children',
@@ -427,72 +519,6 @@ console.log('slideout');
       }, rowHeader);
     }
   }, rows);
-});
-
-/***/ }),
-
-/***/ "./modules/video/video.js":
-/*!********************************!*\
-  !*** ./modules/video/video.js ***!
-  \********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _src_js_lib_dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../src/js/lib/dom */ "./src/js/lib/dom.js");
-
-/* harmony default export */ __webpack_exports__["default"] = (function (el) {
-  var volumeToggle = Object(_src_js_lib_dom__WEBPACK_IMPORTED_MODULE_0__["select"])('.js-video-volume-toggle', el);
-  var video = Object(_src_js_lib_dom__WEBPACK_IMPORTED_MODULE_0__["select"])('.js-video', el);
-  var vimeo = /player.vimeo.com/.test(video.getAttribute('src'));
-  var player = false;
-  var volume = 0; // Because getting Babel errors from vimeo player package
-
-  if (vimeo) {
-    var script = document.createElement('script');
-    script.setAttribute('src', '//player.vimeo.com/api/player.js');
-    document.body.appendChild(script);
-  }
-
-  var initVimeoPlayer = function initVimeoPlayer() {
-    player = window.Vimeo !== 'undefined' ? new window.Vimeo.Player(video) : false;
-  };
-
-  var checkVimeoPlayer = function checkVimeoPlayer() {
-    !player && initVimeoPlayer();
-  };
-
-  var updatePlayerVolume = function updatePlayerVolume() {
-    if (volume > 0) {
-      Object(_src_js_lib_dom__WEBPACK_IMPORTED_MODULE_0__["addClass"])('is-volume-on', el);
-    } else {
-      Object(_src_js_lib_dom__WEBPACK_IMPORTED_MODULE_0__["removeClass"])('is-volume-on', el);
-    }
-  };
-
-  Object(_src_js_lib_dom__WEBPACK_IMPORTED_MODULE_0__["on"])('click', function (e) {
-    // Mute for vimeo embeds
-    if (vimeo) {
-      checkVimeoPlayer();
-
-      if (player) {
-        if (volume > 0) {
-          volume = 0;
-        } else {
-          volume = 1;
-        }
-
-        player.setVolume(volume);
-        updatePlayerVolume();
-      } else {
-        // Player wasn't initalized yet, try again in a split sec
-        setTimeout(function () {
-          Object(_src_js_lib_dom__WEBPACK_IMPORTED_MODULE_0__["trigger"])('click', volumeToggle);
-        }, 250);
-      }
-    }
-  }, volumeToggle);
 });
 
 /***/ }),

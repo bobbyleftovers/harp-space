@@ -2,7 +2,6 @@ import { on, select, selectAll, addClass, removeClass, hasClass, getModuleOption
 import { map, partial, pipe } from '../../src/js/lib/utils'
 
 const MODULE_NAME = 'slideout'
-console.log('slideout')
 export default function (el) {
   const defaults = {
     item: '.menu-item-has-children',

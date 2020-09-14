@@ -1,4 +1,49 @@
 .contact {
 	display: flex;
 	flex-direction: column;
+
+	&__content {
+		width: 100%;
+
+		.wpforms-field-container {
+			display: flex;
+			flex-direction: column;
+
+			@include size--m {
+				flex-direction: row;
+				flex-wrap: wrap;
+			}
+
+			.wpforms-field {
+				padding: 10px !important;
+
+				@include size--m {
+					width: 50%;
+
+					&:last-of-type {
+						width: 100%;
+					}
+				}
+			}
+
+			input.wpforms-field-medium {
+				max-width: none !important;
+			}
+		}
+
+		.wpforms-submit-container {
+			width: 100%;
+			display: flex;
+			padding: 10px !important;
+			justify-content: flex-end;
+
+			.wpforms-submit {
+				background: var(--c-pink) !important;
+				color: white !important;
+				border: 0 !important;
+				border-radius: 4px;
+				text-transform: uppercase
+			}
+		}
+	}
 }

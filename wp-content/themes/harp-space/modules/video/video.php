@@ -1,9 +1,9 @@
 <?php
 if(!empty($video)) :
 ?>
-  <div class="video container <?= $class; ?>" data-module="video" tabindex="-1">
-    <?= $header ? '<h2 class="video__header">'.$header.'</h2>' : null ?>
-    <?= get_video_oembed( $video, $attr,'js-video' ); ?>
+  <div class="video container <?= $class; ?>" tabindex="-1">
+    <?= $header ? '<h2 class="section-header video__header">'.$header.'</h2>' : null ?>
+    <div class="video__wrap" style="--aspect-ratio: 9 / 17;"></div><?= get_video_oembed( $video, $attr, 'js-video' ) ?></div>
   </div>
 <?php
 endif;

@@ -15,7 +15,7 @@ class Base_Theme extends BB_Theme {
     add_action( 'wp_enqueue_scripts', array( &$this, 'enqueue_scripts_and_styles' ) );
 
     add_action( 'wp_head', array(&$this, 'add_critical_css'), 1);
-    add_action( 'wp_footer', array(&$this, 'load_rest_css') );
+    // add_action( 'wp_footer', array(&$this, 'load_rest_css') );
     // add_action( 'wp_footer', array(&$this, 'load_google_fonts') );
     // add_action( 'wp_footer', array(&$this, 'load_vimeo_scripts') );
 
@@ -148,8 +148,8 @@ class Base_Theme extends BB_Theme {
   */
   public function add_post_types()
   {
-    $ctp_post_types = $this->cpt_config_data();
-      $types = [];
+    // $ctp_post_types = $this->cpt_config_data();
+    $types = [];
 
     foreach( $types as $type ) {
       $this->add_post_type($type);
@@ -163,7 +163,7 @@ class Base_Theme extends BB_Theme {
   */
   public function add_taxonomies()
   {
-    $cpt_taxonomies = $this->cpt_config_data( false );
+    // $cpt_taxonomies = $this->cpt_config_data( false );
     $taxonomies = [];
 
     foreach( $taxonomies as $taxonomy_args ) {
@@ -171,49 +171,6 @@ class Base_Theme extends BB_Theme {
       unset($taxonomy_args['types']);
       $this->add_taxonomy( $taxonomy_args, $post_type );
     }
-  }
-
-  public function cpt_config_data( $is_post_type = true )
-  {
-    $cpt_key_name = $is_post_type ? 'cptui_post_types' : 'cptui_taxonomies';
-    $cpt_json_file = $this->cpt_json_path . "/$cpt_key_name.json";
-    $cpt_saved_data = get_option( $cpt_key_name, array() );
-
-    // create our data cpt dir if not exists
-    if ( !file_exists( dirname( $cpt_json_file ) ) )
-    {
-      @mkdir( dirname( $cpt_json_file ), 0777, true );
-    }
-
-    if ( !empty( $cpt_saved_data ) ) {
-      $cpt_json_data = json_encode( $cpt_saved_data, JSON_PRETTY_PRINT );
-
-      // create the file if not exists yet, or update if changed
-      if ( !file_exists( $cpt_json_file ) )
-      {
-        @file_put_contents( $cpt_json_file, $cpt_json_data );
-      }
-      else
-      {
-        $theme_cpt_json_data = @file_get_contents( $cpt_json_file );
-        if ( $cpt_json_data !== $theme_cpt_json_data )
-        {
-          @file_put_contents( $cpt_json_file, $cpt_json_data );
-        }
-      }
-    }
-    else
-    {
-      // no saved data, check files, load data
-      $theme_cpt_json_data = @file_get_contents( $cpt_json_file );
-      if ( !empty( $theme_cpt_json_data ) )
-      {
-        $cpt_saved_data = json_decode( $theme_cpt_json_data, true );
-        update_option( $cpt_key_name, $cpt_saved_data );
-      }
-    }
-
-    return $cpt_saved_data;
   }
 
   /**
@@ -438,10 +395,12 @@ class Base_Theme extends BB_Theme {
     $file = TEMPLATEPATH . '/assets/critical.min.css';
     $file_content = @file_get_contents( $file );
     // note that we might need to write a filter here to dynamically replace filepaths to font files
-    // If a reference is needed, this has been done on a Well+Good project
     if (!empty($file_content)) {
       printf('<style type="text/css">%s</style>', $file_content);
     }
+
+    // if not using load_rest_css use this
+    wp_enqueue_style('main_css', get_template_directory_uri() . '/assets/css/main.css?ver=' . $theme_ver );
   }
 
   /**

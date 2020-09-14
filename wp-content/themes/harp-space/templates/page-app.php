@@ -24,6 +24,7 @@
     ));?>
   </section>
   <section id="video"><?php
+    // echo carbon_get_the_post_meta('video_title');
     the_module('video', array(
       'header' => carbon_get_the_post_meta('video_title'),
       'video' => carbon_get_the_post_meta('video_embed')
