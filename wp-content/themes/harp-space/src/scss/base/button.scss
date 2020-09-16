@@ -5,42 +5,24 @@
   display: inline-block;
   color: var(--c-white);
   text-decoration: none;
-  background-color: var(--c-black);
-  border: 1px solid var(--c-white);
-  padding: 1em var(--padding-s);
+  text-transform: uppercase;
+  background-color: var(--c-pink);
+  border: 0;
+  border-radius: 4px;
+  padding: 1em;
 
   &:hover {
     color: var(--c-white);
-    background-color: var(--c-dark-grey);
-    border: 1px solid var(--c-white);
+    background-color: var(--c-pink);
   }
 
   @include size--m {
-    padding: 1.25em var(--padding-s);
+    padding: 1.25em;
   }
 
   &--white {
     color: var(--c-black);
     background-color: var(--c-white);
-  }
-
-  &--filled {
-    color: var(--c-white);
-    background-color: var(--c-black);
-    border: 1px solid var(--c-white);
-
-    &:hover {
-      color: var(--c-white);
-      background-color: var(--c-dark-grey);
-    }
-  }
-
-  &--full-mobile {
-    width: 100%;
-
-    @include size--m {
-      width: auto;
-    }
   }
 
   &[disabled] {

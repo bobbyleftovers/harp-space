@@ -31,7 +31,7 @@
 .slideout__content {
   width: 100%;
   padding: 10px 20px;
-  background: var(--c-dark-grey);
+  background: var(--c-black);
 }
 
 .slideout__menu {
@@ -220,7 +220,7 @@
     display: flex;
     transform: translateX(0);
 
-    @include size--l {
+    @include size--m {
       display: none;
     }
   }
@@ -233,10 +233,6 @@
 .header-scrolled-past {
   .slideout {
     top: 0;
-
-    @include size--s {
-      top: 0;
-    }
   }
 }
 

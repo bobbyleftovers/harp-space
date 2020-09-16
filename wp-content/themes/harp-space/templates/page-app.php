@@ -18,19 +18,19 @@
     'copy' => apply_filters( 'the_content',carbon_get_the_post_meta('hero_copy')),
     'link_set' => carbon_get_the_post_meta('listen_links')
   ));?>
-  <section id="music"><?php
+  <section id="music" class="content-section"><?php
     the_module('music', array(
       'header' => carbon_get_the_post_meta('music_header')
     ));?>
   </section>
-  <section id="video"><?php
+  <section id="video" class="content-section"><?php
     // echo carbon_get_the_post_meta('video_title');
     the_module('video', array(
       'header' => carbon_get_the_post_meta('video_title'),
       'video' => carbon_get_the_post_meta('video_embed')
     ));?>
   </section>
-  <section id="contact"><?php
+  <section id="contact" class="content-section"><?php
     the_module('contact', array(
       'header' => carbon_get_the_post_meta('contact_title'),
       'shortcode' => carbon_get_the_post_meta('contact_shortcode')

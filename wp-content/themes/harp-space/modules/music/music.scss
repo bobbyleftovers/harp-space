@@ -16,21 +16,37 @@
 			flex-direction: column;
 			width: 100%;
 			padding: 0 20px;
+			margin-bottom: 20px;
 
-			.preview__track-info {
+			&__header {
+				text-transform: uppercase;
+				color: var(--c-pink);
+				width: 100%;
+				border-bottom: 2px solid var(--c-pink);
+				margin-bottom: 8px;
+			}
+
+			&__track-info {
 				display: flex;
 				align-items: center;
 				justify-content: space-between;
 				width: 100%;
+			}
 
-				.preview__info {
-					display: flex;
+			&__info {
+				display: flex;
+				align-items: flex-start;
+				flex-direction: column;
+
+				@include size--m {
 					align-items: center;
+					flex-direction: row;
 				}
 			}
 
-			.preview__play,
-			.preview__pause{
+			&__play,
+			&__pause{
+				padding: 0 8px 0 0;
 				font-size: 30px;
 				color: var(--c-pink);
 			}
@@ -44,15 +60,15 @@
 				}
 			}
 
-			.preview__play {
+			&__play {
 				display: block;
 			}
 
-			.preview__pause {
+			&__pause {
 				display: none;
 			}
 
-			.preview__timer {
+			&__timer {
 
 			}
 
@@ -69,42 +85,86 @@
 	}
 
 	&__track-listing {
+		.button.btn-toggle-list {
+			margin: 0 auto;
+			display: block;
+			border: 2px solid var(--c-white);
+			background: transparent;
+			display: flex;
+			align-items: center;
+
+			.toggle-icon {
+				@extend .transition;
+
+				font-size: 18px;
+				transform: rotate(0deg);
+				transform-origin: center;	
+			}
+
+			span {
+				padding-right: 8px;
+				pointer-events: none;
+			}
+
+			&.open .toggle-icon{
+				pointer-events: none;
+				transform: rotate(180deg);
+			}
+		}
+
 		.list {
 			&__wrap {
 				display: flex;
-				flex-direction: row;
+				flex-direction: column;
 				width: 100%;
+				height: 0px;
+				transition:height 0.3s ease-out;
+				overflow: hidden;
 
-				@include size--m {
-					flex-direction: column;
+				&.open {
+					height: auto;
 				}
 			}
 
 			&__item {
 				display: flex;
-				flex-direction: row;
+				flex-wrap: wrap;
 				align-items: flex-start;
 				justify-content: space-between;
 				width: 100%;
 			}
 
 			&__index {
-				flex: 0.3;
+				width: 100%;
+
+				@include size--m {
+					width: auto;
+					flex: 0.3;
+				}
 			}
 
 			&__title {
-				flex: 1;
 				color: var(--c-pink);
+
+				@include size--m {
+					flex: 1;
+				}
 			}
 
 			&__credits {
-				flex: 1;
-				display: flex;
-				flex-direction: column;
+				display: none;
+
+				@include size--m {
+					flex: 1;
+					display: flex;
+					flex-direction: column;
+				}
 			}
 
 			&__duration {
-				flex: 0.25
+				@include size--m {
+					flex: 0.25;
+				}
 			}
 		}
 	}

@@ -1,5 +1,6 @@
 import '@fortawesome/fontawesome-free/js/all.js'
 import init from './lib/init-modules'
+import global, { scrollNav } from './global'
 import { addClass, hasClass } from './lib/dom'
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -7,6 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
   init({
     module: 'modules'
   }).mount()
+
+  scrollNav()
 
   // Add touch class if touch device and re-init modules
   window.addEventListener('touchstart', () => {

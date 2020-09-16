@@ -97,7 +97,6 @@ var map = {
 	"./header/header.js": "./modules/header/header.js",
 	"./image/image.js": "./modules/image/image.js",
 	"./music/music.js": "./modules/music/music.js",
-	"./post-rows/post-rows.js": "./modules/post-rows/post-rows.js",
 	"./slideout/slideout.js": "./modules/slideout/slideout.js"
 };
 
@@ -137,39 +136,28 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = (function (el) {
-  // const slideoutToggle = selectAll('.js-slideout-toggle')
-  // if (slideoutToggle) {
-  //   map((item) => {
-  //     on('click', () => {
-  //       toggleClass('slideout-activate', document.body)
-  //       removeClass('search-activate', document.body)
-  //       const classRemove = getData('remove-class', slideoutToggle)
-  //       const classRemoveTarget = getData('remove-class-target', slideoutToggle) || document.body
-  //       if (classRemove) {
-  //         removeClass(classRemove, select(classRemoveTarget, el))
-  //       }
-  //       if (getAttribute('aria-expanded', slideoutToggle) === 'false') {
-  //         setAttribute('aria-expanded', true, slideoutToggle)
-  //       } else {
-  //         setAttribute('aria-expanded', false, slideoutToggle)
-  //       }
-  //     }, item)
-  //   }, slideoutToggle)
-  // }
-  // const searchToggle = selectAll('.js-search-toggle')
-  // if (searchToggle) {
-  //   map((item) => {
-  //     on('click', () => {
-  //       toggleClass('search-activate', document.body)
-  //       removeClass('slideout-activate', document.body)
-  //       if (getAttribute('aria-expanded', searchToggle) === 'false') {
-  //         setAttribute('aria-expanded', true, searchToggle)
-  //       } else {
-  //         setAttribute('aria-expanded', false, searchToggle)
-  //       }
-  //     }, item)
-  //   }, searchToggle)
-  // }
+  var slideoutToggle = Object(_src_js_lib_dom__WEBPACK_IMPORTED_MODULE_0__["selectAll"])('.js-slideout-toggle');
+
+  if (slideoutToggle) {
+    Object(_src_js_lib_utils__WEBPACK_IMPORTED_MODULE_1__["map"])(function (item) {
+      Object(_src_js_lib_dom__WEBPACK_IMPORTED_MODULE_0__["on"])('click', function () {
+        Object(_src_js_lib_dom__WEBPACK_IMPORTED_MODULE_0__["toggleClass"])('slideout-activate', document.body);
+        var classRemove = Object(_src_js_lib_dom__WEBPACK_IMPORTED_MODULE_0__["getData"])('remove-class', slideoutToggle);
+        var classRemoveTarget = Object(_src_js_lib_dom__WEBPACK_IMPORTED_MODULE_0__["getData"])('remove-class-target', slideoutToggle) || document.body;
+
+        if (classRemove) {
+          Object(_src_js_lib_dom__WEBPACK_IMPORTED_MODULE_0__["removeClass"])(classRemove, Object(_src_js_lib_dom__WEBPACK_IMPORTED_MODULE_0__["select"])(classRemoveTarget, el));
+        }
+
+        if (Object(_src_js_lib_dom__WEBPACK_IMPORTED_MODULE_0__["getAttribute"])('aria-expanded', slideoutToggle) === 'false') {
+          Object(_src_js_lib_dom__WEBPACK_IMPORTED_MODULE_0__["setAttribute"])('aria-expanded', true, slideoutToggle);
+        } else {
+          Object(_src_js_lib_dom__WEBPACK_IMPORTED_MODULE_0__["setAttribute"])('aria-expanded', false, slideoutToggle);
+        }
+      }, item);
+    }, slideoutToggle);
+  }
+
   function checkScroll(e) {
     var slideInDuration = 1000; // Check if scrolled past height of nav
 
@@ -203,29 +191,14 @@ __webpack_require__.r(__webpack_exports__);
       Object(_src_js_lib_dom__WEBPACK_IMPORTED_MODULE_0__["setAttribute"])('aria-hidden', false, subMenu);
       Object(_src_js_lib_dom__WEBPACK_IMPORTED_MODULE_0__["addClass"])('is-active', item.parentNode);
     });
-  }, subMenuItems); // const searchButton = select('.header__search__toggle')
-  // onFocus(searchButton, searchButton => {
-  //   deactivateCurrentMenuItem()
-  // })
-  // Disable click for menu items with children
-  // const touchBody = select('.is-touch')
-  // if (touchBody) {
-  //   const subMenuTouchItems = selectAll('#menu-main-navigation>.menu-item-has-children>a', touchBody)
-  //   map((item) => {
-  //     on('click', e => {
-  //       e.preventDefault()
-  //       e.stopPropagation()
-  //       addClass('is-active', item.parentNode)
-  //     }, item)
-  //   }, subMenuTouchItems)
-  // }
-
+  }, subMenuItems);
   Object(_src_js_lib_dom__WEBPACK_IMPORTED_MODULE_0__["on"])('click', function (e) {
     deactivateCurrentMenuItem();
   }, document.body);
   Object(_src_js_lib_dom__WEBPACK_IMPORTED_MODULE_0__["onEscape"])(document.body, function () {
     deactivateCurrentMenuItem();
-  }); // window.addEventListener('scroll', checkScroll)
+  });
+  window.addEventListener('scroll', checkScroll);
 });
 
 /***/ }),
@@ -297,6 +270,7 @@ updateLazyLoad().handlers(true);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _src_js_lib_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../src/js/lib/utils */ "./src/js/lib/utils.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -305,6 +279,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 // import { on, select, selectAll, toggleClass, addClass, removeClass, hasClass, onFocus, onEscape, getData, setAttribute, getAttribute } from '../../src/js/lib/dom'
 // import { map } from '../../src/js/lib/utils'
+
+
 var Music = /*#__PURE__*/function () {
   function Music(el) {
     _classCallCheck(this, Music);
@@ -342,13 +318,25 @@ var Music = /*#__PURE__*/function () {
           track.pause();
         });
       });
+      this.el.querySelector('.btn-toggle-list').addEventListener('click', function (e) {
+        var section = document.querySelector('.list__wrap');
+        var isCollapsed = section.getAttribute('data-collapsed') === 'true';
+        e.target.classList.toggle('open');
+
+        if (isCollapsed) {
+          Object(_src_js_lib_utils__WEBPACK_IMPORTED_MODULE_0__["expandSection"])(section);
+          section.setAttribute('data-collapsed', 'false');
+        } else {
+          Object(_src_js_lib_utils__WEBPACK_IMPORTED_MODULE_0__["collapseSection"])(section);
+        }
+      });
     }
   }, {
     key: "getFormattedTime",
     value: function getFormattedTime(ts) {
       var sec = Math.floor(ts);
       var min = Math.floor(sec / 60);
-      min = min >= 10 ? min : '0' + min;
+      min = min >= 10 ? min : min;
       sec = Math.floor(sec % 60);
       sec = sec >= 10 ? sec : '0' + sec;
       return min + ':' + sec;
@@ -377,41 +365,6 @@ var Music = /*#__PURE__*/function () {
 
 /* harmony default export */ __webpack_exports__["default"] = (function (el) {
   new Music(el);
-});
-
-/***/ }),
-
-/***/ "./modules/post-rows/post-rows.js":
-/*!****************************************!*\
-  !*** ./modules/post-rows/post-rows.js ***!
-  \****************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// import {
-//   on,
-//   select,
-//   selectAll,
-//   addClass,
-//   removeClass,
-//   hasClass,
-//   getModuleOptions,
-//   setStyle,
-//   setAttribute,
-//   closest
-// } from 'lib/dom';
-// import { map, partial, pipe } from 'lib/utils';
-// const MODULE_NAME = 'post-rows'
-/* harmony default export */ __webpack_exports__["default"] = (function (el) {
-  console.log('post-rows', el); // const defaults = {
-  //   item: '.menu-item-has-children',
-  //   content: '.sub-menu',
-  //   toggle: '.menu-item-has-children > a',
-  //   activeClass: 'submenu-activate',
-  //   noAccordionClass: 'submenu-no-accordion'
-  // }
 });
 
 /***/ }),
@@ -7052,6 +7005,37 @@ module.exports = g;
 
 /***/ }),
 
+/***/ "./src/js/global.js":
+/*!**************************!*\
+  !*** ./src/js/global.js ***!
+  \**************************/
+/*! exports provided: scrollNav */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "scrollNav", function() { return scrollNav; });
+/* harmony import */ var _lib_scroll_to__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lib/scroll-to */ "./src/js/lib/scroll-to.js");
+
+
+function scrollNav() {
+  var links = document.querySelectorAll('.menu-item a');
+  links.forEach(function (link) {
+    var href = link.getAttribute('href');
+
+    if (href[0] === '#' && document.querySelector(href)) {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        Object(_lib_scroll_to__WEBPACK_IMPORTED_MODULE_0__["default"])(document.querySelector(href));
+      });
+    }
+  });
+}
+
+
+
+/***/ }),
+
 /***/ "./src/js/lib/dom.js":
 /*!***************************!*\
   !*** ./src/js/lib/dom.js ***!
@@ -7605,6 +7589,30 @@ var onEnter = function onEnter(el, callback) {
 
 /***/ }),
 
+/***/ "./src/js/lib/get-hash-target.js":
+/*!***************************************!*\
+  !*** ./src/js/lib/get-hash-target.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/**
+ * @param {HTMLElement} anchor Target element to bind <a> clicks to
+ * @return {HTMLElement}
+ */
+function getTarget(anchor) {// console.log('anchor', anchor)
+  // const hash = anchor.hash || false
+  // const query = hash && hash.length ? document.querySelectorAll(hash) : null
+  // const target = query && query.length ? query[0] : null
+  // return target || null
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (getTarget);
+
+/***/ }),
+
 /***/ "./src/js/lib/init-modules.js":
 /*!************************************!*\
   !*** ./src/js/lib/init-modules.js ***!
@@ -7728,11 +7736,37 @@ function init(types) {
 
 /***/ }),
 
+/***/ "./src/js/lib/scroll-to.js":
+/*!*********************************!*\
+  !*** ./src/js/lib/scroll-to.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return scrollTo; });
+/* harmony import */ var _dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dom */ "./src/js/lib/dom.js");
+/* harmony import */ var _get_hash_target_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./get-hash-target.js */ "./src/js/lib/get-hash-target.js");
+
+
+/**
+ * @param {HTMLElement} el Container element to bind <a> clicks to
+ */
+
+function scrollTo(el) {
+  if (el) {
+    Object(_dom__WEBPACK_IMPORTED_MODULE_0__["scrollTop"])(Object(_dom__WEBPACK_IMPORTED_MODULE_0__["getTopOffset"])(el) - 70);
+  }
+}
+
+/***/ }),
+
 /***/ "./src/js/lib/utils.js":
 /*!*****************************!*\
   !*** ./src/js/lib/utils.js ***!
   \*****************************/
-/*! exports provided: add, allPass, always, anyPass, cond, count, debounce, log, logArgs, logWrap, makeArray, curry, divide, filter, first, flipArgs, getProp, identity, ifElse, inArray, parseOptions, last, lt, map, multiply, not, nth, partial, pipe, range, returnTrue, returnFalse, setProp, staggerCallback, then, reject, tryCatch, when, whileDo, isSet */
+/*! exports provided: add, allPass, always, anyPass, cond, count, debounce, log, logArgs, logWrap, makeArray, collapseSection, curry, divide, expandSection, filter, first, flipArgs, getProp, identity, ifElse, inArray, parseOptions, last, lt, map, multiply, not, nth, partial, pipe, range, returnTrue, returnFalse, setProp, staggerCallback, then, reject, tryCatch, when, whileDo, isSet */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7748,8 +7782,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logArgs", function() { return logArgs; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logWrap", function() { return logWrap; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "makeArray", function() { return makeArray; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "collapseSection", function() { return collapseSection; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "curry", function() { return curry; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "divide", function() { return divide; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "expandSection", function() { return expandSection; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "filter", function() { return filter; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "first", function() { return first; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "flipArgs", function() { return flipArgs; });
@@ -8204,6 +8240,44 @@ var parseOptions = function parseOptions(string) {
   return Object.assign({}, def, options);
 };
 
+var collapseSection = function collapseSection(element) {
+  // get the height of the element's inner content, regardless of its actual size
+  var sectionHeight = element.scrollHeight; // temporarily disable all css transitions
+
+  var elementTransition = element.style.transition;
+  element.style.transition = ''; // on the next frame (as soon as the previous style change has taken effect),
+  // explicitly set the element's height to its current pixel height, so we 
+  // aren't transitioning out of 'auto'
+
+  requestAnimationFrame(function () {
+    element.style.height = sectionHeight + 'px';
+    element.style.transition = elementTransition; // on the next frame (as soon as the previous style change has taken effect),
+    // have the element transition to height: 0
+
+    requestAnimationFrame(function () {
+      element.style.height = 0 + 'px';
+    });
+  }); // mark the section as "currently collapsed"
+
+  element.setAttribute('data-collapsed', 'true');
+};
+
+var expandSection = function expandSection(element) {
+  // get the height of the element's inner content, regardless of its actual size
+  var sectionHeight = element.scrollHeight; // have the element transition to the height of its inner content
+
+  element.style.height = sectionHeight + 'px'; // when the next css transition finishes (which should be the one we just triggered)
+
+  element.addEventListener('transitionend', function (e) {
+    // remove this event listener so it only gets triggered once
+    element.removeEventListener('transitionend', arguments.callee); // remove "height" from the element's inline styles, so it can return to its initial value
+
+    element.style.height = null;
+  }); // mark the section as "currently not collapsed"
+
+  element.setAttribute('data-collapsed', 'false');
+};
+
 var isSet = function isSet(val) {
   return typeof val !== 'undefined';
 };
@@ -8224,7 +8298,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _fortawesome_fontawesome_free_js_all_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fortawesome/fontawesome-free/js/all.js */ "./node_modules/@fortawesome/fontawesome-free/js/all.js");
 /* harmony import */ var _fortawesome_fontawesome_free_js_all_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_fontawesome_free_js_all_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _lib_init_modules__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./lib/init-modules */ "./src/js/lib/init-modules.js");
-/* harmony import */ var _lib_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./lib/dom */ "./src/js/lib/dom.js");
+/* harmony import */ var _global__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./global */ "./src/js/global.js");
+/* harmony import */ var _lib_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./lib/dom */ "./src/js/lib/dom.js");
+
 
 
 
@@ -8232,11 +8308,12 @@ document.addEventListener('DOMContentLoaded', function () {
   // Init modules
   Object(_lib_init_modules__WEBPACK_IMPORTED_MODULE_1__["default"])({
     module: 'modules'
-  }).mount(); // Add touch class if touch device and re-init modules
+  }).mount();
+  Object(_global__WEBPACK_IMPORTED_MODULE_2__["scrollNav"])(); // Add touch class if touch device and re-init modules
 
   window.addEventListener('touchstart', function () {
-    if (!Object(_lib_dom__WEBPACK_IMPORTED_MODULE_2__["hasClass"])('is-touch', document.body)) {
-      Object(_lib_dom__WEBPACK_IMPORTED_MODULE_2__["addClass"])('is-touch', document.body);
+    if (!Object(_lib_dom__WEBPACK_IMPORTED_MODULE_3__["hasClass"])('is-touch', document.body)) {
+      Object(_lib_dom__WEBPACK_IMPORTED_MODULE_3__["addClass"])('is-touch', document.body);
       Object(_lib_init_modules__WEBPACK_IMPORTED_MODULE_1__["default"])({
         module: 'modules'
       }).mount();

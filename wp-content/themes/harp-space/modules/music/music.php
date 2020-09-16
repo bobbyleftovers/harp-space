@@ -41,8 +41,8 @@ $tracks = new WP_Query($args);?>
 	</div>
 	
 	<div class="music__track-listing">
-		<button class="btn btn-toggle-list">View Track Listing</button>
-		<div class="list__wrap"><?php
+		<button class="button btn-toggle-list"><span>View Track Listing</span> <i class="toggle-icon fas fa-caret-up"></i></button>
+		<div class="list__wrap" data-collapsed="true"><?php
 			if($tracks->have_posts())	{
 				while($tracks->have_posts()){
 					$tracks->the_post();

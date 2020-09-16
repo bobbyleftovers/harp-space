@@ -131,10 +131,26 @@ a {
   padding: 15px;
   width: 100%;
   margin: 0 auto;
-  max-width: 1440px;
+  max-width: 600px;
+
+  @include size--m {
+    max-width: 1200px;
+  }
 
   &--sm {
-    max-width: 960px;
+    @include size--m {
+      max-width: 960px;
+    }
+  }
+}
+
+.content-section {
+  padding-top: 40px;
+  padding-bottom: 60px;
+
+  @include size--m {
+    padding-top: 60px;
+    padding-bottom: 80px;
   }
 }
 

@@ -35,7 +35,7 @@
           $cta = carbon_get_the_post_meta('hero_cta'); ?>
           <h2 class="details-cta__header"><?= carbon_get_the_post_meta('hero_cta_header') ?></h2>
           <span class="details-cta__subheader"><?= carbon_get_the_post_meta('hero_cta_subheader') ?></span>
-          <a href="<?= $cta['url'] ?>" target="_blank" class="btn"><?= $cta['anchor'] ?></a>
+          <a href="<?= $cta['url'] ?>" target="_blank" class="button"><?= $cta['anchor'] ?></a>
         </div>
     </div>
   </div>
