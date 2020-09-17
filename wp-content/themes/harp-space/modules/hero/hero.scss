@@ -94,6 +94,12 @@
     color: var(--c-mid-lite-grey);
   }
 
+  .details__copy-eyebrow {
+    font-family: $bold;
+    font-size: $headerB;
+    color: var(--c-pink);
+  }
+
   .details__cta {
     display: flex;
     flex-direction: column;
@@ -101,6 +107,7 @@
     width: 100%;
 
     .details-cta__subheader {
+      font-family: $reg;
       margin-bottom: 20px;
     }
   }

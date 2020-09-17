@@ -1,7 +1,4 @@
 :root {
-  --font-body: 'Helvetica Neue Regular';
-  --font-display-heading: 'Helvetica Neue Regular';
-  --font-heading: 'Helvetica Neue Regular';
 
   /* Containers */
   --container-xs: 490px;
@@ -25,19 +22,24 @@
   --c-grey: #636363;
   --c-dark-grey: #191919;
 
-  // not in use
-  --c-pink-dark: #3aaaa1;
-  --c-med-grey: #706d6d;
-  --c-mid-lite-grey: #a4a1a1;
-  
-
-  /* #0070af; */
-
   /* Nav */
   --nav-height-s: 55px;
   --nav-height-m: 65px;
   --nav-height-l: 80px;
 }
+
+/* Font sizes */
+$headerA: 2.1rem;
+$headerB: 1.8rem;
+$button: 1.7rem;
+$copy: 1.6rem;
+$small: 1.4rem;
+
+$reg: 'Helvetica Neue Regular';
+$bold: 'Helvetica Neue Bold';
+$reg-it: 'Helvetica Neue Italic';
+$bold-it: 'Helvetica Neue Bold Italic';
+$bold-cnd: 'Helvetica Neue Black Condensed';
 
 /* media queries */
 // These weren't working yet so I just used the ones below. Not sure what the advantage is for the upper ones really

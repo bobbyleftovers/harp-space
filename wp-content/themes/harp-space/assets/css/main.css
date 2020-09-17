@@ -1,10 +1,37 @@
 /*
  * Imports from src directory
  */
+@font-face {
+  font-family: "Helvetica Neue Regular";
+  src: local("Helvetica Neue Roman"), local("Helvetica-Neue-Roman"), url("../fonts/HelveticaNeueCyr-Roman/HelveticaNeueCyr-Roman.woff2") format("woff2"), url("../fonts/HelveticaNeueCyr-Roman/HelveticaNeueCyr-Roman.woff") format("woff"), url("../fonts/HelveticaNeueCyr-Roman/HelveticaNeueCyr-Roman.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Helvetica Neue Italic";
+  src: local("Helvetica Neue Italic"), local("Helvetica-Neue-Italic"), url("../fonts/HelveticaNeueCyr-Italic/HelveticaNeueCyr-Italic.woff2") format("woff2"), url("../fonts/HelveticaNeueCyr-Italic/HelveticaNeueCyr-Italic.woff") format("woff"), url("../fonts/HelveticaNeueCyr-Italic/HelveticaNeueCyr-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Helvetica Neue Bold";
+  src: local("Helvetica Neue Bold"), local("Helvetica-Neue-Bold"), url("../fonts/HelveticaNeueCyr-Bold/HelveticaNeueCyr-Bold.woff2") format("woff2"), url("../fonts/HelveticaNeueCyr-Bold/HelveticaNeueCyr-Bold.woff") format("woff"), url("../fonts/HelveticaNeueCyr-Bold/HelveticaNeueCyr-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Helvetica Neue Bold Italic";
+  src: local("Helvetica Neue Bold Italic"), local("Helvetica-Neue-Bold-Italic"), url("../fonts/HelveticaNeueCyr-BoldItalic/HelveticaNeueCyr-BoldItalic.woff2") format("woff2"), url("../fonts/HelveticaNeueCyr-BoldItalic/HelveticaNeueCyr-BoldItalic.woff") format("woff"), url("../fonts/HelveticaNeueCyr-BoldItalic/HelveticaNeueCyr-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Helvetica Neue Black Condensed";
+  src: local("Helvetica Neue Black Condensed"), local("Helvetica-Neue-Black-Condensed"), url("../fonts/HelveticaNeueBlackCondensed/HelveticaNeueBlackCondensed.woff2") format("woff2"), url("../fonts/HelveticaNeueBlackCondensed/HelveticaNeueBlackCondensed.woff") format("woff"), url("../fonts/HelveticaNeueBlackCondensed/HelveticaNeueBlackCondensed.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
 :root {
-  --font-body: "Helvetica Neue Regular";
-  --font-display-heading: "Helvetica Neue Regular";
-  --font-heading: "Helvetica Neue Regular";
   /* Containers */
   --container-xs: 490px;
   --container-s: 670px;
@@ -24,21 +51,18 @@
   --c-lite-grey: #bbbbbb;
   --c-grey: #636363;
   --c-dark-grey: #191919;
-  --c-pink-dark: #3aaaa1;
-  --c-med-grey: #706d6d;
-  --c-mid-lite-grey: #a4a1a1;
-  /* #0070af; */
   /* Nav */
   --nav-height-s: 55px;
   --nav-height-m: 65px;
   --nav-height-l: 80px;
 }
 
+/* Font sizes */
 /* media queries */
-.transition, .music__track-listing .button.btn-toggle-list .toggle-icon, .music__track-listing .gform_wrapper .gform_footer input.btn-toggle-list.button.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) .toggle-icon, .gform_wrapper .gform_footer .music__track-listing input.btn-toggle-list.button.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) .toggle-icon, .music__track-listing .gform_wrapper form .gform_footer .btn-toggle-list.gform_button .toggle-icon, .gform_wrapper form .gform_footer .music__track-listing .btn-toggle-list.gform_button .toggle-icon, .music__track-listing .gform_wrapper form .gform_footer input.btn-toggle-list.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) .toggle-icon, .gform_wrapper form .gform_footer .music__track-listing input.btn-toggle-list.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) .toggle-icon, .slideout-overlay, .slideout__menu .sub-menu, .slideout__menu .submenu-icon, .slideout__inner, .slideout, .gform_wrapper .ginput_container input[type=text]:not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
+.transition, .music__track-listing .button.btn-toggle-list .toggle-icon, .music__track-listing .contact__content .wpforms-submit-container .btn-toggle-list.wpforms-submit .toggle-icon, .contact__content .wpforms-submit-container .music__track-listing .btn-toggle-list.wpforms-submit .toggle-icon, .music__track-listing .gform_wrapper .gform_footer .contact__content .wpforms-submit-container input.btn-toggle-list.gform_button.wpforms-submit:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) .toggle-icon, .gform_wrapper .gform_footer .contact__content .wpforms-submit-container .music__track-listing input.btn-toggle-list.gform_button.wpforms-submit:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) .toggle-icon, .music__track-listing .contact__content .wpforms-submit-container .gform_wrapper .gform_footer input.btn-toggle-list.gform_button.wpforms-submit:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) .toggle-icon, .contact__content .wpforms-submit-container .gform_wrapper .gform_footer .music__track-listing input.btn-toggle-list.gform_button.wpforms-submit:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) .toggle-icon, .music__track-listing .gform_wrapper .gform_footer input.btn-toggle-list.button.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) .toggle-icon, .contact__content .wpforms-submit-container .music__track-listing .gform_wrapper .gform_footer input.btn-toggle-list.gform_button.wpforms-submit:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) .toggle-icon, .gform_wrapper .gform_footer .music__track-listing input.btn-toggle-list.button.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) .toggle-icon, .gform_wrapper .gform_footer .music__track-listing .contact__content .wpforms-submit-container input.btn-toggle-list.gform_button.wpforms-submit:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) .toggle-icon, .music__track-listing .gform_wrapper form .gform_footer .btn-toggle-list.gform_button .toggle-icon, .gform_wrapper form .gform_footer .music__track-listing .btn-toggle-list.gform_button .toggle-icon, .music__track-listing .gform_wrapper form .gform_footer input.btn-toggle-list.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) .toggle-icon, .gform_wrapper form .gform_footer .music__track-listing input.btn-toggle-list.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) .toggle-icon, .slideout-overlay, .slideout__menu .sub-menu, .slideout__menu .submenu-icon, .slideout__inner, .slideout, .gform_wrapper .ginput_container input[type=text]:not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
 .gform_wrapper .ginput_container select,
 .gform_wrapper.gf_browser_chrome .ginput_container_select select,
-.gform_wrapper .ginput_container textarea, .button, .gform_wrapper form .gform_footer .gform_button,
+.gform_wrapper .ginput_container textarea, .button, .contact__content .wpforms-submit-container .wpforms-submit, .gform_wrapper .gform_footer .contact__content .wpforms-submit-container input.gform_button.wpforms-submit:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]), .contact__content .wpforms-submit-container .gform_wrapper .gform_footer input.gform_button.wpforms-submit:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]), .gform_wrapper form .gform_footer .gform_button,
 .gform_wrapper form .gform_footer input[type=submit].gform_button, .gform_wrapper form .gform_footer input.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]),
 .gform_wrapper form .gform_footer input.gform_button[type=submit]:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]), .gform_wrapper .gform_footer input.button.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]), .gform_wrapper form .gform_footer input.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]), .gform_wrapper form .gform_footer input.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) {
   transition: all 0.3s ease;
@@ -278,6 +302,9 @@ ul {
 
 button,
 .button,
+.contact__content .wpforms-submit-container .wpforms-submit,
+.gform_wrapper .gform_footer .contact__content .wpforms-submit-container input.gform_button.wpforms-submit:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]),
+.contact__content .wpforms-submit-container .gform_wrapper .gform_footer input.gform_button.wpforms-submit:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]),
 .gform_wrapper form .gform_footer .gform_button,
 .gform_wrapper form .gform_footer input[type=submit].gform_button,
 .gform_wrapper form .gform_footer input.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]),
@@ -325,25 +352,19 @@ section:focus {
   outline: none;
 }
 
-/* #### Generated By: http://www.cufonfonts.com #### */
-@font-face {
-  font-family: "Helvetica Neue Regular";
-  font-style: normal;
-  font-weight: normal;
-  src: url("../fonts/HelveticaNeueBold.woff") format("woff");
-}
 html {
-  font-size: 62.5%;
+  font-family: "Helvetica Neue Regular";
+  font-size: 9px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 10px;
+  }
 }
 
 body {
   background: var(--c-black);
   color: var(--c-white);
-  font-size: 1.2rem;
-  line-height: 1.625;
-  font-family: var(--font-body);
-  font-weight: 300;
-  letter-spacing: 0.05em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.8em;
@@ -375,7 +396,7 @@ small,
 
 h1,
 .h1 {
-  font-family: var(--font-heading);
+  font-family: "Helvetica Neue Bold";
   font-size: 2.3rem;
   line-height: 1.2em;
   font-weight: 600;
@@ -411,6 +432,9 @@ label,
 .gform_wrapper form .gform_body .gfield_label,
 .select-wrapper select,
 .button,
+.contact__content .wpforms-submit-container .wpforms-submit,
+.gform_wrapper .gform_footer .contact__content .wpforms-submit-container input.gform_button.wpforms-submit:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]),
+.contact__content .wpforms-submit-container .gform_wrapper .gform_footer input.gform_button.wpforms-submit:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]),
 .gform_wrapper form .gform_footer .gform_button,
 .gform_wrapper form .gform_footer input[type=submit].gform_button,
 .gform_wrapper form .gform_footer input.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]),
@@ -419,8 +443,7 @@ label,
 .gform_wrapper form .gform_footer input.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]),
 .gform_wrapper form .gform_footer input.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]),
 .link {
-  font-family: var(--font-heading);
-  text-transform: uppercase;
+  font-family: "Helvetica Neue Bold";
   font-weight: 600;
   letter-spacing: 0.08em;
   line-height: 1.3em;
@@ -428,12 +451,12 @@ label,
 
 h2,
 .h2 {
-  font-size: 1.7rem;
+  font-size: 1.5rem;
 }
 @media (min-width: 768px) {
   h2,
 .h2 {
-    font-size: 3.5rem;
+    font-size: 2.2rem;
   }
 }
 
@@ -484,6 +507,9 @@ label,
 .gform_wrapper form .gform_body .gfield_label,
 .select-wrapper select,
 .button,
+.contact__content .wpforms-submit-container .wpforms-submit,
+.gform_wrapper .gform_footer .contact__content .wpforms-submit-container input.gform_button.wpforms-submit:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]),
+.contact__content .wpforms-submit-container .gform_wrapper .gform_footer input.gform_button.wpforms-submit:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]),
 .gform_wrapper form .gform_footer .gform_button,
 .gform_wrapper form .gform_footer input[type=submit].gform_button,
 .gform_wrapper form .gform_footer input.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]),
@@ -492,31 +518,15 @@ label,
 .gform_wrapper form .gform_footer input.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]),
 .gform_wrapper form .gform_footer input.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]),
 .link {
-  font-size: 1rem;
+  font-size: 1.6rem;
 }
-@media (min-width: 768px) {
-  label,
-.label,
-.footer .footer__menu .menu-item,
-.slideout__menu .menu-item a,
-.header__menu .menu-item a:not(.button),
-#tinymce h4,
-#tinymce .sub-heading,
-.wysiwyg h4,
-.wysiwyg .sub-heading,
-.gform_wrapper form .gform_body .gfield_label,
-.select-wrapper select,
-.button,
-.gform_wrapper form .gform_footer .gform_button,
-.gform_wrapper form .gform_footer input[type=submit].gform_button,
-.gform_wrapper form .gform_footer input.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]),
-.gform_wrapper form .gform_footer input.gform_button[type=submit]:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]),
-.gform_wrapper .gform_footer input.button.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]),
-.gform_wrapper form .gform_footer input.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]),
-.gform_wrapper form .gform_footer input.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]),
-.link {
-    font-size: 1.1rem;
-  }
+b,
+strong {
+  font-family: "Helvetica Neue Bold";
+}
+
+i {
+  font-family: "Helvetica Neue Italic";
 }
 
 a {
@@ -752,42 +762,46 @@ a {
 
 .section-header {
   text-align: center;
+  font-family: "Helvetica Neue Bold";
+  font-size: 1.8rem;
 }
 
-.button, .gform_wrapper form .gform_footer .gform_button,
+.button, .contact__content .wpforms-submit-container .wpforms-submit, .gform_wrapper .gform_footer .contact__content .wpforms-submit-container input.gform_button.wpforms-submit:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]), .contact__content .wpforms-submit-container .gform_wrapper .gform_footer input.gform_button.wpforms-submit:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]), .gform_wrapper form .gform_footer .gform_button,
 .gform_wrapper form .gform_footer input[type=submit].gform_button, .gform_wrapper form .gform_footer input.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]),
 .gform_wrapper form .gform_footer input.gform_button[type=submit]:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]), .gform_wrapper .gform_footer input.button.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]), .gform_wrapper form .gform_footer input.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]), .gform_wrapper form .gform_footer input.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) {
   display: inline-block;
   color: var(--c-white);
+  font-family: "Helvetica Neue Bold";
   text-decoration: none;
   text-transform: uppercase;
   background-color: var(--c-pink);
   border: 0;
   border-radius: 4px;
-  padding: 1em;
+  padding: 0.5em;
+  font-size: 1.7rem;
 }
-.button:hover, .gform_wrapper form .gform_footer .gform_button:hover,
+.button:hover, .contact__content .wpforms-submit-container .wpforms-submit:hover, .gform_wrapper .gform_footer .contact__content .wpforms-submit-container input.gform_button.wpforms-submit:hover:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]), .contact__content .wpforms-submit-container .gform_wrapper .gform_footer input.gform_button.wpforms-submit:hover:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]), .gform_wrapper form .gform_footer .gform_button:hover,
 .gform_wrapper form .gform_footer input[type=submit].gform_button:hover, .gform_wrapper form .gform_footer input.gform_button:hover:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]), .gform_wrapper .gform_footer input.button.gform_button:hover:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) {
   color: var(--c-white);
   background-color: var(--c-pink);
 }
 @media (min-width: 768px) {
-  .button, .gform_wrapper form .gform_footer .gform_button,
+  .button, .contact__content .wpforms-submit-container .wpforms-submit, .gform_wrapper .gform_footer .contact__content .wpforms-submit-container input.gform_button.wpforms-submit:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]), .contact__content .wpforms-submit-container .gform_wrapper .gform_footer input.gform_button.wpforms-submit:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]), .gform_wrapper form .gform_footer .gform_button,
 .gform_wrapper form .gform_footer input[type=submit].gform_button, .gform_wrapper form .gform_footer input.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]),
 .gform_wrapper form .gform_footer input.gform_button[type=submit]:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]), .gform_wrapper .gform_footer input.button.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]), .gform_wrapper form .gform_footer input.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]), .gform_wrapper form .gform_footer input.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) {
-    padding: 1.25em;
+    padding: 0.5em;
   }
 }
 .button--white {
   color: var(--c-black);
   background-color: var(--c-white);
 }
-.button[disabled], .gform_wrapper form .gform_footer [disabled].gform_button,
+.button[disabled], .contact__content .wpforms-submit-container [disabled].wpforms-submit, .gform_wrapper .gform_footer .contact__content .wpforms-submit-container input[disabled].gform_button.wpforms-submit:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]), .contact__content .wpforms-submit-container .gform_wrapper .gform_footer input[disabled].gform_button.wpforms-submit:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]), .gform_wrapper form .gform_footer [disabled].gform_button,
 .gform_wrapper form .gform_footer input[disabled][type=submit].gform_button, .gform_wrapper form .gform_footer input[disabled].gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]), .gform_wrapper .gform_footer input[disabled].button.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) {
   pointer-events: none;
   opacity: 0.5;
 }
-.button.is-hidden, .gform_wrapper form .gform_footer .is-hidden.gform_button,
+.button.is-hidden, .contact__content .wpforms-submit-container .is-hidden.wpforms-submit, .gform_wrapper .gform_footer .contact__content .wpforms-submit-container input.is-hidden.gform_button.wpforms-submit:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]), .contact__content .wpforms-submit-container .gform_wrapper .gform_footer input.is-hidden.gform_button.wpforms-submit:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]), .gform_wrapper form .gform_footer .is-hidden.gform_button,
 .gform_wrapper form .gform_footer input.is-hidden[type=submit].gform_button, .gform_wrapper form .gform_footer input.is-hidden.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]), .gform_wrapper .gform_footer input.is-hidden.button.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) {
   display: none;
 }
@@ -864,7 +878,7 @@ a {
   }
 }
 
-.gform_wrapper .gform_footer input.button.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]), .gform_wrapper form .gform_footer input.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]),
+.gform_wrapper .gform_footer input.button.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]), .gform_wrapper .gform_footer .contact__content .wpforms-submit-container input.gform_button.wpforms-submit:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]), .contact__content .wpforms-submit-container .gform_wrapper .gform_footer input.gform_button.wpforms-submit:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]), .gform_wrapper form .gform_footer input.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]),
 .gform_wrapper form .gform_footer input.gform_button[type=submit]:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]), .gform_wrapper form .gform_footer input.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) {
   width: auto;
   -webkit-appearance: none;
@@ -1143,12 +1157,14 @@ a {
   color: var(--c-pink);
 }
 .header__menu .menu-item a:not(.button) {
-  padding: 3.15em 0.65em;
+  color: var(--c-pink);
+  padding: 2.5em 1.75em 1em;
+  text-transform: uppercase;
   line-height: 1.3em;
   display: inline-block;
 }
 .header__menu .menu-item > a:not(.button) {
-  color: var(--c-lite-grey);
+  color: var(--c-white);
   line-height: 1em;
 }
 .header__menu .menu-item:hover > a:not(.button), .header__menu .menu-item.current-menu-item:hover > a:not(.button) {
@@ -1592,6 +1608,11 @@ a {
   margin-bottom: 15px;
   color: var(--c-mid-lite-grey);
 }
+.hero .details__copy-eyebrow {
+  font-family: "Helvetica Neue Bold";
+  font-size: 1.8rem;
+  color: var(--c-pink);
+}
 .hero .details__cta {
   display: flex;
   flex-direction: column;
@@ -1599,6 +1620,7 @@ a {
   width: 100%;
 }
 .hero .details__cta .details-cta__subheader {
+  font-family: "Helvetica Neue Regular";
   margin-bottom: 20px;
 }
 
@@ -1670,7 +1692,7 @@ a {
 .music__previews .preview.is-playing .preview__pause {
   display: block;
 }
-.music__track-listing .button.btn-toggle-list, .music__track-listing .gform_wrapper .gform_footer input.btn-toggle-list.button.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]), .gform_wrapper .gform_footer .music__track-listing input.btn-toggle-list.button.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]), .music__track-listing .gform_wrapper form .gform_footer .btn-toggle-list.gform_button, .gform_wrapper form .gform_footer .music__track-listing .btn-toggle-list.gform_button, .music__track-listing .gform_wrapper form .gform_footer input.btn-toggle-list.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]), .gform_wrapper form .gform_footer .music__track-listing input.btn-toggle-list.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) {
+.music__track-listing .button.btn-toggle-list, .music__track-listing .contact__content .wpforms-submit-container .btn-toggle-list.wpforms-submit, .contact__content .wpforms-submit-container .music__track-listing .btn-toggle-list.wpforms-submit, .music__track-listing .gform_wrapper .gform_footer .contact__content .wpforms-submit-container input.btn-toggle-list.gform_button.wpforms-submit:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]), .gform_wrapper .gform_footer .contact__content .wpforms-submit-container .music__track-listing input.btn-toggle-list.gform_button.wpforms-submit:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]), .music__track-listing .contact__content .wpforms-submit-container .gform_wrapper .gform_footer input.btn-toggle-list.gform_button.wpforms-submit:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]), .contact__content .wpforms-submit-container .gform_wrapper .gform_footer .music__track-listing input.btn-toggle-list.gform_button.wpforms-submit:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]), .music__track-listing .gform_wrapper .gform_footer input.btn-toggle-list.button.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]), .contact__content .wpforms-submit-container .music__track-listing .gform_wrapper .gform_footer input.btn-toggle-list.gform_button.wpforms-submit:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]), .gform_wrapper .gform_footer .music__track-listing input.btn-toggle-list.button.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]), .gform_wrapper .gform_footer .music__track-listing .contact__content .wpforms-submit-container input.btn-toggle-list.gform_button.wpforms-submit:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]), .music__track-listing .gform_wrapper form .gform_footer .btn-toggle-list.gform_button, .gform_wrapper form .gform_footer .music__track-listing .btn-toggle-list.gform_button, .music__track-listing .gform_wrapper form .gform_footer input.btn-toggle-list.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]), .gform_wrapper form .gform_footer .music__track-listing input.btn-toggle-list.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) {
   margin: 0 auto;
   display: block;
   border: 2px solid var(--c-white);
@@ -1678,16 +1700,16 @@ a {
   display: flex;
   align-items: center;
 }
-.music__track-listing .button.btn-toggle-list .toggle-icon, .music__track-listing .gform_wrapper .gform_footer input.btn-toggle-list.button.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) .toggle-icon, .gform_wrapper .gform_footer .music__track-listing input.btn-toggle-list.button.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) .toggle-icon, .music__track-listing .gform_wrapper form .gform_footer .btn-toggle-list.gform_button .toggle-icon, .gform_wrapper form .gform_footer .music__track-listing .btn-toggle-list.gform_button .toggle-icon, .music__track-listing .gform_wrapper form .gform_footer input.btn-toggle-list.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) .toggle-icon, .gform_wrapper form .gform_footer .music__track-listing input.btn-toggle-list.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) .toggle-icon {
+.music__track-listing .button.btn-toggle-list .toggle-icon, .music__track-listing .contact__content .wpforms-submit-container .btn-toggle-list.wpforms-submit .toggle-icon, .contact__content .wpforms-submit-container .music__track-listing .btn-toggle-list.wpforms-submit .toggle-icon, .music__track-listing .gform_wrapper .gform_footer .contact__content .wpforms-submit-container input.btn-toggle-list.gform_button.wpforms-submit:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) .toggle-icon, .gform_wrapper .gform_footer .contact__content .wpforms-submit-container .music__track-listing input.btn-toggle-list.gform_button.wpforms-submit:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) .toggle-icon, .music__track-listing .contact__content .wpforms-submit-container .gform_wrapper .gform_footer input.btn-toggle-list.gform_button.wpforms-submit:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) .toggle-icon, .contact__content .wpforms-submit-container .gform_wrapper .gform_footer .music__track-listing input.btn-toggle-list.gform_button.wpforms-submit:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) .toggle-icon, .music__track-listing .gform_wrapper .gform_footer input.btn-toggle-list.button.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) .toggle-icon, .contact__content .wpforms-submit-container .music__track-listing .gform_wrapper .gform_footer input.btn-toggle-list.gform_button.wpforms-submit:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) .toggle-icon, .gform_wrapper .gform_footer .music__track-listing input.btn-toggle-list.button.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) .toggle-icon, .gform_wrapper .gform_footer .music__track-listing .contact__content .wpforms-submit-container input.btn-toggle-list.gform_button.wpforms-submit:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) .toggle-icon, .music__track-listing .gform_wrapper form .gform_footer .btn-toggle-list.gform_button .toggle-icon, .gform_wrapper form .gform_footer .music__track-listing .btn-toggle-list.gform_button .toggle-icon, .music__track-listing .gform_wrapper form .gform_footer input.btn-toggle-list.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) .toggle-icon, .gform_wrapper form .gform_footer .music__track-listing input.btn-toggle-list.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) .toggle-icon {
   font-size: 18px;
   transform: rotate(0deg);
   transform-origin: center;
 }
-.music__track-listing .button.btn-toggle-list span, .music__track-listing .gform_wrapper .gform_footer input.btn-toggle-list.button.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) span, .gform_wrapper .gform_footer .music__track-listing input.btn-toggle-list.button.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) span, .music__track-listing .gform_wrapper form .gform_footer .btn-toggle-list.gform_button span, .gform_wrapper form .gform_footer .music__track-listing .btn-toggle-list.gform_button span, .music__track-listing .gform_wrapper form .gform_footer input.btn-toggle-list.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) span, .gform_wrapper form .gform_footer .music__track-listing input.btn-toggle-list.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) span {
+.music__track-listing .button.btn-toggle-list span, .music__track-listing .contact__content .wpforms-submit-container .btn-toggle-list.wpforms-submit span, .contact__content .wpforms-submit-container .music__track-listing .btn-toggle-list.wpforms-submit span, .music__track-listing .gform_wrapper .gform_footer .contact__content .wpforms-submit-container input.btn-toggle-list.gform_button.wpforms-submit:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) span, .gform_wrapper .gform_footer .contact__content .wpforms-submit-container .music__track-listing input.btn-toggle-list.gform_button.wpforms-submit:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) span, .music__track-listing .contact__content .wpforms-submit-container .gform_wrapper .gform_footer input.btn-toggle-list.gform_button.wpforms-submit:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) span, .contact__content .wpforms-submit-container .gform_wrapper .gform_footer .music__track-listing input.btn-toggle-list.gform_button.wpforms-submit:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) span, .music__track-listing .gform_wrapper .gform_footer input.btn-toggle-list.button.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) span, .contact__content .wpforms-submit-container .music__track-listing .gform_wrapper .gform_footer input.btn-toggle-list.gform_button.wpforms-submit:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) span, .gform_wrapper .gform_footer .music__track-listing input.btn-toggle-list.button.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) span, .gform_wrapper .gform_footer .music__track-listing .contact__content .wpforms-submit-container input.btn-toggle-list.gform_button.wpforms-submit:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) span, .music__track-listing .gform_wrapper form .gform_footer .btn-toggle-list.gform_button span, .gform_wrapper form .gform_footer .music__track-listing .btn-toggle-list.gform_button span, .music__track-listing .gform_wrapper form .gform_footer input.btn-toggle-list.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) span, .gform_wrapper form .gform_footer .music__track-listing input.btn-toggle-list.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) span {
   padding-right: 8px;
   pointer-events: none;
 }
-.music__track-listing .button.btn-toggle-list.open .toggle-icon, .music__track-listing .gform_wrapper .gform_footer input.btn-toggle-list.open.button.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) .toggle-icon, .gform_wrapper .gform_footer .music__track-listing input.btn-toggle-list.open.button.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) .toggle-icon, .music__track-listing .gform_wrapper form .gform_footer .btn-toggle-list.open.gform_button .toggle-icon, .gform_wrapper form .gform_footer .music__track-listing .btn-toggle-list.open.gform_button .toggle-icon, .music__track-listing .gform_wrapper form .gform_footer input.btn-toggle-list.open.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) .toggle-icon, .gform_wrapper form .gform_footer .music__track-listing input.btn-toggle-list.open.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) .toggle-icon {
+.music__track-listing .button.btn-toggle-list.open .toggle-icon, .music__track-listing .contact__content .wpforms-submit-container .btn-toggle-list.open.wpforms-submit .toggle-icon, .contact__content .wpforms-submit-container .music__track-listing .btn-toggle-list.open.wpforms-submit .toggle-icon, .music__track-listing .gform_wrapper .gform_footer .contact__content .wpforms-submit-container input.btn-toggle-list.open.gform_button.wpforms-submit:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) .toggle-icon, .gform_wrapper .gform_footer .contact__content .wpforms-submit-container .music__track-listing input.btn-toggle-list.open.gform_button.wpforms-submit:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) .toggle-icon, .music__track-listing .contact__content .wpforms-submit-container .gform_wrapper .gform_footer input.btn-toggle-list.open.gform_button.wpforms-submit:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) .toggle-icon, .contact__content .wpforms-submit-container .gform_wrapper .gform_footer .music__track-listing input.btn-toggle-list.open.gform_button.wpforms-submit:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) .toggle-icon, .music__track-listing .gform_wrapper .gform_footer input.btn-toggle-list.open.button.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) .toggle-icon, .contact__content .wpforms-submit-container .music__track-listing .gform_wrapper .gform_footer input.btn-toggle-list.open.gform_button.wpforms-submit:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) .toggle-icon, .gform_wrapper .gform_footer .music__track-listing input.btn-toggle-list.open.button.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) .toggle-icon, .gform_wrapper .gform_footer .music__track-listing .contact__content .wpforms-submit-container input.btn-toggle-list.open.gform_button.wpforms-submit:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) .toggle-icon, .music__track-listing .gform_wrapper form .gform_footer .btn-toggle-list.open.gform_button .toggle-icon, .gform_wrapper form .gform_footer .music__track-listing .btn-toggle-list.open.gform_button .toggle-icon, .music__track-listing .gform_wrapper form .gform_footer input.btn-toggle-list.open.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) .toggle-icon, .gform_wrapper form .gform_footer .music__track-listing input.btn-toggle-list.open.gform_button:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) .toggle-icon {
   pointer-events: none;
   transform: rotate(180deg);
 }
@@ -1711,6 +1733,8 @@ a {
 }
 .music__track-listing .list__index {
   width: 100%;
+  font-family: "Helvetica Neue Black Condensed";
+  font-size: 1.8rem;
 }
 @media (min-width: 768px) {
   .music__track-listing .list__index {
@@ -1760,9 +1784,22 @@ a {
 }
 
 /* critical:end */
+#contact.content-section {
+  background: var(--c-white);
+}
+
 .contact {
   display: flex;
   flex-direction: column;
+}
+.contact__header {
+  color: var(--c-black);
+  padding-bottom: 40px;
+}
+@media (min-width: 768px) {
+  .contact__header {
+    padding-bottom: 80px;
+  }
 }
 .contact__content {
   width: 100%;
@@ -1778,7 +1815,7 @@ a {
   }
 }
 .contact__content .wpforms-field-container .wpforms-field {
-  padding: 10px !important;
+  padding: 0 20px 20px !important;
 }
 @media (min-width: 768px) {
   .contact__content .wpforms-field-container .wpforms-field {
@@ -1788,13 +1825,19 @@ a {
     width: 100%;
   }
 }
-.contact__content .wpforms-field-container input.wpforms-field-medium {
+.contact__content .wpforms-field-container input.wpforms-field-medium,
+.contact__content .wpforms-field-container textarea.wpforms-field-medium {
   max-width: none !important;
+  background: var(--c-black) !important;
+  color: var(--c-white) !important;
+  border: 0 !important;
+  border-radius: 4px !important;
+  font-family: "Helvetica Neue Regular" !important;
 }
 .contact__content .wpforms-submit-container {
   width: 100%;
   display: flex;
-  padding: 10px !important;
+  padding: 0 20px !important;
   justify-content: flex-end;
 }
 .contact__content .wpforms-submit-container .wpforms-submit {
@@ -1809,6 +1852,12 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-direction: column;
+}
+@media (min-width: 1000px) {
+  .footer__inner {
+    flex-direction: row;
+  }
 }
 .footer__inner .footer__logo {
   height: auto;
@@ -1830,21 +1879,24 @@ a {
   max-width: 320px;
   flex: 1;
   display: flex;
+  flex-direction: row;
+}
+@media (min-width: 1000px) {
+  .footer .footer__menu {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 .footer .footer__menu .menu-item {
   text-transform: uppercase;
   padding: 0.5em;
-  width: 50%;
 }
-@media (min-width: 768px) {
-  .footer .footer__menu {
-    max-width: none;
-  }
-  .footer .footer__menu .menu-item {
-    width: auto;
-  }
+.footer .footer__menu .menu-item + .menu-item {
+  margin-left: 2.5em;
+}
+@media (min-width: 1000px) {
   .footer .footer__menu .menu-item + .menu-item {
-    margin-left: 2.5em;
+    margin-left: 0;
   }
 }
 .footer .footer__menu a {

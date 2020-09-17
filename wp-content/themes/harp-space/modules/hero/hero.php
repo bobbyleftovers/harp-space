@@ -6,7 +6,7 @@
         'class' => 'hero__image',
         'contain' => true
       ));?>
-      <span class="hero__cover-subhead"><?= $cover_subhead ?></span>
+      <h2 class="hero__cover-subhead"><?= $cover_subhead ?></h2>
       <div class="hero__link-set"><?php
         foreach($link_set as $link){
           echo '<a href="" class="link-set__link">';

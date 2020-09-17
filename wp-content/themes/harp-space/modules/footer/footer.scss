@@ -3,6 +3,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-direction: column;
+
+    @include size--l {
+      flex-direction: row;
+    }
 
     .footer__logo {
       height: auto;
@@ -29,26 +34,24 @@
     max-width: 320px;
     flex: 1;
     display: flex;
-    // flex-wrap: wrap;
-    // text-align: center;
+    flex-direction: row;
+
+    @include size--l {
+      flex-direction: column;
+      align-items: flex-start;
+    }
 
     .menu-item {
       @extend .label;
 
       text-transform: uppercase;
       padding: 0.5em;
-      width: 50%;
-    }
 
-    @include size--m {
-      // justify-content: center;
-      max-width: none;
+      + .menu-item {
+        margin-left: 2.5em;
 
-      .menu-item {
-        width: auto;
-
-        + .menu-item {
-          margin-left: 2.5em;
+        @include size--l {
+          margin-left: 0;
         }
       }
     }

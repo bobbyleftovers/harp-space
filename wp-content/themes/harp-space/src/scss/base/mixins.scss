@@ -40,14 +40,6 @@ $gutter-h-m: var(--padding-s);
   transition: $attribute $duration $type;
 }
 
-@mixin base-font {
-  font-size: 1.2rem;
-  line-height: 1.625;
-  font-family: var(--font-body);
-  font-weight: 300;
-  letter-spacing: 0.05em;
-}
-
 @mixin gutter-l {
   padding-left: $gutter-h-s;
 

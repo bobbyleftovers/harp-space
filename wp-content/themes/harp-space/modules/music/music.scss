@@ -136,6 +136,8 @@
 
 			&__index {
 				width: 100%;
+				font-family: $bold-cnd;
+				font-size: $headerB;
 
 				@include size--m {
 					width: auto;
