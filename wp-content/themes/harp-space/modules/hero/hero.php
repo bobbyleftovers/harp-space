@@ -1,4 +1,7 @@
-<section class="hero <?= $class; ?>">
+<?php
+$bk_image = wp_get_attachment_image_src( carbon_get_theme_option( 'background_image' ), 'full' )[0]; ?>
+
+<section class="hero <?= $class; ?>" data-module="hero" style="background-image: url('<?= $bk_image ?>')">
   <div class="container hero__inner">
     <div class="hero__cover"><?php
       the_module('image', array(

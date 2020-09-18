@@ -47,7 +47,9 @@
   /* Colors */
   --c-white: #fff;
   --c-black: #242020;
+  --c-black-trans: rgba(36,32,32,0.45);
   --c-pink: #ff00ff;
+  --c-link: #00a9f8;
   --c-lite-grey: #bbbbbb;
   --c-grey: #636363;
   --c-dark-grey: #191919;
@@ -422,7 +424,7 @@ label,
 .h4,
 .h6,
 .label,
-.footer .footer__menu .menu-item,
+.footer__right .footer__menu .menu-item,
 .slideout__menu .menu-item a,
 .header__menu .menu-item a:not(.button),
 #tinymce h4,
@@ -497,7 +499,7 @@ h5,
 
 label,
 .label,
-.footer .footer__menu .menu-item,
+.footer__right .footer__menu .menu-item,
 .slideout__menu .menu-item a,
 .header__menu .menu-item a:not(.button),
 #tinymce h4,
@@ -530,8 +532,8 @@ i {
 }
 
 a {
-  color: var(--c-pink);
-  text-decoration: underline;
+  color: var(--c-link);
+  text-decoration: none;
 }
 
 .underline {
@@ -725,11 +727,6 @@ h6,
 
 :focus {
   outline-color: #bfbfc2;
-}
-
-a {
-  text-decoration: none;
-  color: var(--c-pink);
 }
 
 .container {
@@ -1073,35 +1070,37 @@ a {
 * the js works this way now.
 * instead, use this for now: '@import "../../modules/header/header.scss";'
 ***/
+.logged-in .header {
+  top: 46px;
+}
+@media (min-width: 768px) {
+  .logged-in .header {
+    top: 32px;
+  }
+}
+.logged-in .header.is-scrolled-past {
+  top: 46px;
+}
+@media (min-width: 768px) {
+  .logged-in .header.is-scrolled-past {
+    top: 32px;
+  }
+}
+
 .header {
   overflow: visible;
   position: relative;
+  position: fixed;
+  width: 100%;
+  top: 0;
 }
 .header.is-scrolled-past {
   position: fixed;
-  transform: translateY(0%);
   top: 0;
   left: 0;
   right: 0;
   z-index: 10;
-  background: var(--c-black);
-}
-.header.is-scrolled-past.is-sliding-in {
-  transition: none;
-  transform: translateY(-100%);
-}
-.header.is-scrolled-past + * {
-  margin-top: var(--nav-height-s);
-}
-@media (--s) {
-  .header.is-scrolled-past + * {
-    margin-top: var(--nav-height-m);
-  }
-}
-@media (--m) {
-  .header.is-scrolled-past + * {
-    margin-top: var(--nav-height-l);
-  }
+  background: var(--c-black-trans);
 }
 .header .header__inner {
   width: 100%;
@@ -1126,6 +1125,9 @@ a {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+}
+.header .header__inner .header__right .share__link {
+  color: var(--c-pink);
 }
 @media (min-width: 768px) {
   .header {
@@ -1237,6 +1239,7 @@ a {
 .slideout-activate .header {
   max-height: 100%;
   overflow-y: auto;
+  background-color: var(--c-black);
 }
 .slideout-activate .header__mobile__toggle__bar:first-child {
   transform: rotate(45deg) translate(9px, 9px);
@@ -1275,7 +1278,7 @@ a {
 .slideout__content {
   width: 100%;
   padding: 10px 20px;
-  background: var(--c-black);
+  background: var(--c-black-trans);
 }
 
 .slideout__menu .menu-item {
@@ -1286,9 +1289,6 @@ a {
   padding: 10px 0;
   color: var(--c-white);
   text-decoration: none;
-}
-.slideout__menu .menu-item:not(:last-child) > a {
-  border-bottom: 1px solid rgba(var(--c-white), 0.2);
 }
 .slideout__menu > .menu-item > a,
 .slideout__menu .menu-item-has-children > a {
@@ -1303,9 +1303,6 @@ a {
 .slideout__menu .submenu-activate > .sub-menu {
   opacity: 1;
   visibility: visible;
-}
-.slideout__menu .submenu-activate > a {
-  border-bottom: 1px solid var(--c-black);
 }
 .slideout__menu .submenu-activate > a > .submenu-icon {
   transform: rotate(180deg) translateY(50%);
@@ -1372,7 +1369,6 @@ a {
 }
 
 .slideout__block {
-  border-top: 1px solid var(--c-black);
   margin-bottom: 15px;
 }
 .slideout__block > h3 {
@@ -1391,7 +1387,6 @@ a {
   left: 0;
   right: 0;
   height: 100%;
-  background-color: rgba(var(--c-black), 0.7);
   z-index: 3;
   top: var(--nav-height-s);
 }
@@ -1848,6 +1843,9 @@ a {
   text-transform: uppercase;
 }
 
+.footer {
+  background-repeat: repeat;
+}
 .footer__inner {
   display: flex;
   justify-content: space-between;
@@ -1873,35 +1871,6 @@ a {
 }
 .footer .footer__block > * {
   margin: 0 1em;
-}
-.footer .footer__menu {
-  margin: 0 auto;
-  max-width: 320px;
-  flex: 1;
-  display: flex;
-  flex-direction: row;
-}
-@media (min-width: 1000px) {
-  .footer .footer__menu {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-.footer .footer__menu .menu-item {
-  text-transform: uppercase;
-  padding: 0.5em;
-}
-.footer .footer__menu .menu-item + .menu-item {
-  margin-left: 2.5em;
-}
-@media (min-width: 1000px) {
-  .footer .footer__menu .menu-item + .menu-item {
-    margin-left: 0;
-  }
-}
-.footer .footer__menu a {
-  text-decoration: none;
-  color: var(--c-mid-lite-grey);
 }
 .footer__center {
   display: flex;
@@ -1936,12 +1905,60 @@ a {
   color: var(--c-white);
   background: var(--c-pink);
 }
-.footer__center a {
+.footer__center .footer__credit {
+  font-size: 1.2rem;
+}
+.footer__center .footer__credit:after {
+  content: "|";
+  padding: 0 20px;
+}
+.footer__center .footer__credit:last-of-type:after {
+  display: none;
+}
+.footer__right .footer__menu {
+  margin: 0 auto;
+  max-width: 320px;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 30px;
+}
+@media (min-width: 1000px) {
+  .footer__right .footer__menu {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.footer__right .footer__menu .menu-item {
+  text-transform: uppercase;
+  padding: 0.5em;
+}
+.footer__right .footer__menu .menu-item + .menu-item {
+  margin-left: 2.5em;
+}
+@media (min-width: 1000px) {
+  .footer__right .footer__menu .menu-item + .menu-item {
+    margin-left: 0;
+  }
+}
+.footer__right .footer__menu .menu-item a {
+  color: var(--c-pink);
+}
+.footer__right .footer__menu a {
   text-decoration: none;
-  color: var(--c-black);
+  color: var(--c-mid-lite-grey);
+}
+.footer__right .footer__shares {
+  display: flex;
+  justify-content: space-around;
+}
+.footer__right .footer__shares .share__link {
+  color: var(--c-pink);
+  font-size: 1.6rem;
 }
 .footer .footer__copyright {
   margin-bottom: 1em;
+  font-size: 1.2rem;
 }
 @media (min-width: 768px) {
   .footer .footer__copyright {

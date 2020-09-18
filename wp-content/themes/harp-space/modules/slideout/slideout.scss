@@ -31,7 +31,7 @@
 .slideout__content {
   width: 100%;
   padding: 10px 20px;
-  background: var(--c-black);
+  background: var(--c-black-trans);
 }
 
 .slideout__menu {
@@ -49,7 +49,7 @@
   }
 
   .menu-item:not(:last-child) > a {
-    border-bottom: 1px solid rgba(var(--c-white), 0.2);
+    // border-bottom: 1px solid rgba(var(--c-white), 0.2);
   }
 
   > .menu-item > a,
@@ -73,7 +73,7 @@
     }
 
     > a {
-      border-bottom: 1px solid var(--c-black);
+      // border-bottom: 1px solid var(--c-black);
 
       > .submenu-icon {
         transform: rotate(180deg) translateY(50%);
@@ -168,7 +168,7 @@
 }
 
 .slideout__block {
-  border-top: 1px solid var(--c-black);
+  // border-top: 1px solid var(--c-black);
   margin-bottom: 15px;
 
   > h3 {
@@ -192,7 +192,6 @@
   left: 0;
   right: 0;
   height: 100%;
-  background-color: rgba(var(--c-black), 0.7);
   z-index: 3;
   top: var(--nav-height-s);
 

@@ -1,4 +1,6 @@
 .footer {
+  background-repeat: repeat;
+
   &__inner {
     display: flex;
     justify-content: space-between;
@@ -26,39 +28,6 @@
 
     > * {
       margin: 0 1em;
-    }
-  }
-
-  .footer__menu {
-    margin: 0 auto;
-    max-width: 320px;
-    flex: 1;
-    display: flex;
-    flex-direction: row;
-
-    @include size--l {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .menu-item {
-      @extend .label;
-
-      text-transform: uppercase;
-      padding: 0.5em;
-
-      + .menu-item {
-        margin-left: 2.5em;
-
-        @include size--l {
-          margin-left: 0;
-        }
-      }
-    }
-
-    a {
-      text-decoration: none;
-      color: var(--c-mid-lite-grey);
     }
   }
 
@@ -106,14 +75,72 @@
       }
     }
 
-    a {
-      text-decoration: none;
-      color: var(--c-black);
+    .footer__credit {
+      font-size: $small;
+      &:after {
+        content: '|';
+        padding: 0 20px;
+      }
+
+      &:last-of-type:after {
+        display: none;
+      }
+    }
+  }
+
+  &__right {
+    .footer__menu {
+      margin: 0 auto;
+      max-width: 320px;
+      flex: 1;
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 30px;
+  
+      @include size--l {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+  
+      .menu-item {
+        @extend .label;
+  
+        text-transform: uppercase;
+        padding: 0.5em;
+  
+        + .menu-item {
+          margin-left: 2.5em;
+  
+          @include size--l {
+            margin-left: 0;
+          }
+        }
+  
+        a {
+          color: var(--c-pink);
+        }
+      }
+  
+      a {
+        text-decoration: none;
+        color: var(--c-mid-lite-grey);
+      }
+    }
+
+    .footer__shares {
+      display: flex;
+      justify-content: space-around;
+
+      .share__link {
+        color: var(--c-pink);
+        font-size: $copy;
+      }
     }
   }
 
   .footer__copyright {
     margin-bottom: 1em;
+    font-size: $small;
 
     @include size--m {
       margin-bottom: 0;

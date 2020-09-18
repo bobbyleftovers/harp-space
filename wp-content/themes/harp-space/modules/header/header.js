@@ -22,7 +22,7 @@ export default function (el) {
   }
 
   function checkScroll (e) {
-    const slideInDuration = 1000
+    const slideInDuration = 0
 
     // Check if scrolled past height of nav
     if (window.scrollY > (el.offsetTop + el.offsetHeight)) {

@@ -95,6 +95,7 @@
 
 var map = {
 	"./header/header.js": "./modules/header/header.js",
+	"./hero/hero.js": "./modules/hero/hero.js",
 	"./image/image.js": "./modules/image/image.js",
 	"./music/music.js": "./modules/music/music.js",
 	"./slideout/slideout.js": "./modules/slideout/slideout.js"
@@ -159,7 +160,7 @@ __webpack_require__.r(__webpack_exports__);
   }
 
   function checkScroll(e) {
-    var slideInDuration = 1000; // Check if scrolled past height of nav
+    var slideInDuration = 0; // Check if scrolled past height of nav
 
     if (window.scrollY > el.offsetTop + el.offsetHeight) {
       if (!Object(_src_js_lib_dom__WEBPACK_IMPORTED_MODULE_0__["hasClass"])('is-scrolled-past', el)) {
@@ -199,6 +200,31 @@ __webpack_require__.r(__webpack_exports__);
     deactivateCurrentMenuItem();
   });
   window.addEventListener('scroll', checkScroll);
+});
+
+/***/ }),
+
+/***/ "./modules/hero/hero.js":
+/*!******************************!*\
+  !*** ./modules/hero/hero.js ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (function (el) {
+  console.log('hero', el);
+  var header = document.querySelector('header.header');
+  window.addEventListener('resize', function () {
+    setPadding();
+  });
+  setPadding();
+
+  function setPadding() {
+    console.log(header.offsetHeight);
+    el.style.paddingTop = header.offsetHeight + 'px';
+  }
 });
 
 /***/ }),

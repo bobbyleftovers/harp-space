@@ -17,7 +17,9 @@
   /* Colors */
   --c-white: #fff;
   --c-black: #242020;
+  --c-black-trans: rgba(36,32,32,0.45);
   --c-pink: #ff00ff;
+  --c-link: #00a9f8;
   --c-lite-grey: #bbbbbb;
   --c-grey: #636363;
   --c-dark-grey: #191919;
@@ -33,7 +35,7 @@ $headerA: 2.1rem;
 $headerB: 1.8rem;
 $button: 1.7rem;
 $copy: 1.6rem;
-$small: 1.4rem;
+$small: 1.2rem;
 
 $reg: 'Helvetica Neue Regular';
 $bold: 'Helvetica Neue Bold';

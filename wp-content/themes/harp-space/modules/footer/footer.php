@@ -1,4 +1,8 @@
-<footer class="footer">
+<?php
+$credits = carbon_get_theme_option( 'site_credits' );
+$bk_image = wp_get_attachment_image_src( carbon_get_theme_option( 'background_image' ), 'full' )[0];?>
+
+<footer class="footer" style="background-image: url('<?= $bk_image ?>')">
   <div class="footer__inner container">
     <div class="footer__logo"><?php
         the_module('image', array(
@@ -15,7 +19,6 @@
         <?= carbon_get_theme_option('privacy_message') ?>
       </span>
       <div class="footer__credits"><?php
-        $credits = carbon_get_theme_option( 'site_credits' );
         foreach ($credits as $credit) {
           echo '<span class="footer__credit">'.$credit['site_credit'].'</span>';
         }?>

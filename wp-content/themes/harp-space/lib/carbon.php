@@ -13,6 +13,7 @@ function attach_theme_options() {
             Field::make( 'image', 'logo', 'Logo' ),
             Field::make( 'textarea', 'copyright', 'Copyright' ),
             Field::make( 'text', 'signup_shortcode', 'Signup Shortcode' ),
+            Field::make( 'image', 'background_image', 'Background Image' ),
             Field::make( 'complex', 'shares_links', 'Share Links' )
                 ->add_fields( array(
                     Field::make( 'set', 'social_links', 'Social Links' )
