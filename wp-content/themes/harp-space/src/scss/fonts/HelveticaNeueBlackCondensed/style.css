@@ -1,9 +1,0 @@
-@font-face {
-    font-family: 'Helvetica Neue black Condensed';
-    src: local('Helvetica Neue Black Condensed'), local('Helvetica-Neue-Black-Condensed'),
-        url('HelveticaNeueBlackCondensed.woff2') format('woff2'),
-        url('HelveticaNeueBlackCondensed.woff') format('woff'),
-        url('HelveticaNeueBlackCondensed.ttf') format('truetype');
-    font-weight: 900;
-    font-style: normal;
-  }
