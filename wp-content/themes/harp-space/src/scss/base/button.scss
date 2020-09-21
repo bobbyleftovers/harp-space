@@ -1,0 +1,38 @@
+.button {
+  @extend .label;
+  @extend .transition;
+
+  display: inline-block;
+  color: var(--c-white);
+  font-family: $bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: var(--c-pink);
+  border: 0;
+  border-radius: 4px;
+  padding: 0.5em;
+  font-size: $button;
+
+  &:hover {
+    color: var(--c-white);
+    background-color: var(--c-pink);
+  }
+
+  @include size--m {
+    padding: 0.5em;
+  }
+
+  &--white {
+    color: var(--c-black);
+    background-color: var(--c-white);
+  }
+
+  &[disabled] {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  &.is-hidden {
+    display: none;
+  }
+}

@@ -1,0 +1,122 @@
+html {
+  font-family: $reg;
+  font-size: 9px;
+  letter-spacing: 0.5px;
+
+  @include size--m {
+    font-size: 10px;
+  }
+}
+
+body {
+  background: var(--c-black);
+  color: var(--c-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5em;
+  font-size: $copy;
+}
+
+small,
+.small {
+  font-size: $small;
+}
+
+h1,
+.h1 {
+  font-family: $bold;
+  font-size: 2.3rem;
+  line-height: 1.2em;
+  font-weight: 600;
+
+  @include size--s {
+    font-size: 3rem;
+  }
+
+  @include size--m {
+    font-size: 5rem;
+  }
+}
+
+h2,
+label,
+.h2,
+.h3,
+.h4,
+.h6,
+.label {
+  font-family: $bold;
+  font-weight: 600;
+  line-height: 1.3em;
+}
+
+h2,
+.h2 {
+  font-size: 1.5rem;
+
+  @include size--m {
+    font-size: 2.2rem;
+  }
+}
+
+h3,
+.h3 {
+  font-size: 1.4rem;
+  font-weight: 500;
+
+  @include size--m {
+    font-size: 2.4rem;
+  }
+}
+
+h4,
+.h4 {
+  font-size: 1.2rem;
+  font-weight: 500;
+
+  @include size--m {
+    font-size: 1.6rem;
+  }
+}
+
+h5,
+.h5 {
+  font-size: 1.2rem;
+
+  @include size--m {
+    font-size: 1.4rem;
+  }
+}
+
+label,
+.label {
+  font-size: $copy;
+
+  @include size--m {
+    // font-size: 1.2rem;
+  }
+}
+
+b,
+strong {
+  font-family: $bold;
+}
+
+i {
+  font-family: $reg-it;
+}
+
+a {
+  color: var(--c-link);
+  text-decoration: none;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.link {
+  @extend .label;
+
+  text-decoration: none;
+}

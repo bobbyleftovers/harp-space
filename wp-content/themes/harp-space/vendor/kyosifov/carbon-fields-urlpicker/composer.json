@@ -1,0 +1,30 @@
+{
+    "name": "kyosifov/carbon-fields-urlpicker",
+    "description": "Carbon Fields extension, that adds a URL picker field type.",
+    "keywords": ["wordpress", "carbon-field", "carbon-fields-urlpicker"],
+    "homepage": "https://github.com/kyosifov/carbon-fields-url",
+
+    "type": "library",
+    "license": "GPL-2.0+",
+    "authors": [
+        {
+            "name": "Ionuț Staicu",
+            "email": "github@iamntz.com"
+        },
+        {
+            "name": "Kaloyan",
+            "email": "kaloqn665@gmail.com"
+        }
+    ],
+    "require": {
+        "htmlburger/carbon-fields": "^3"
+    },
+    "autoload": {
+        "files": [
+            "field.php"
+        ],
+        "psr-4": {
+            "Carbon_Field_UrlPicker\\": "core/"
+        }
+    }
+}

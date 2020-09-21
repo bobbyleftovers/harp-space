@@ -1,0 +1,29 @@
+.select-wrapper {
+  position: relative;
+
+  select {
+    @extend .label;
+
+    width: 100%;
+    z-index: 0;
+    position: relative;
+    padding: 1.25em calc(1.5em + 1.2em) 1.25em 1.5em;
+    -webkit-appearance: none;
+    cursor: pointer;
+    border: 1px solid var(--c-lite-grey);
+    border-radius: 0;
+    background: var(--c-dark-grey);
+    color: var(--c-white);
+  }
+}
+
+.select-icon {
+  pointer-events: none;
+  width: 1.2em;
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  right: calc(1.2em / 2);
+  transform: translateY(-50%);
+  transform-origin: 30% 50%;
+}

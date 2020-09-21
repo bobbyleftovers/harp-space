@@ -1,0 +1,39 @@
+/*
+ * Imports from src directory
+ */
+
+@import "base/fonts.scss";
+@import "base/variables.scss";
+@import "base/mixins.scss";
+@import "base/reset.scss";
+@import "base/typography.scss";
+@import "base/layout.scss";
+@import "base/button.scss";
+@import "base/forms.scss";
+@import "base/wysiwyg.scss";
+@import "base/icons.scss";
+@import "base/flickity.scss";
+@import "base/utilities.scss";
+
+/***
+* the right way is below but i'm not done developing it.
+* it uses postCSS but the config is not done
+* that's why all module scss files are in their module folders
+* it should iterate thru all folders and grab each scss file
+* the js works this way now.
+* instead, use this for now: '@import "../../modules/header/header.scss";'
+***/
+
+@import "../../modules/header/header.scss";
+@import "../../modules/slideout/slideout.scss";
+@import "../../modules/image/image.scss";
+@import "../../modules/hero/hero.scss";
+@import "../../modules/music/music.scss";
+@import "../../modules/video/video.scss";
+@import "../../modules/contact/contact.scss";
+@import "../../modules/footer/footer.scss";
+
+// /*
+//  * Imports from module folders (Paths are expanded within Gulp task)
+//  */
+// @import "<Modules>";
