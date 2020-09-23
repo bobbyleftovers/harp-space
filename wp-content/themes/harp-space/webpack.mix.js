@@ -15,6 +15,7 @@ const path = require('path')
 mix.copy('src/scss/fonts', 'assets/fonts')
 .js('src/js/main.js', 'assets/js')
 .sass('src/scss/main.scss', 'assets/css')
+.sass('src/scss/plugins/polls.scss', 'assets/css')
 .options({
   processCssUrls: false
 })

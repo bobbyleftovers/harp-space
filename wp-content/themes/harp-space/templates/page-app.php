@@ -30,6 +30,12 @@
       'video' => carbon_get_the_post_meta('video_embed')
     ));?>
   </section>
+  <section id="poll">
+    <div class="container container--sm">
+      <!-- test -->
+      <?=  get_poll(2); ?>
+    </div>
+  </section>
   <section id="contact" class="content-section"><?php
     the_module('contact', array(
       'header' => carbon_get_the_post_meta('contact_title'),
