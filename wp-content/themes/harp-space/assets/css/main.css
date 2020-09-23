@@ -1757,6 +1757,12 @@ h6,
 
 .footer {
   background-repeat: repeat;
+  padding: 40px 0 60px;
+}
+@media (min-width: 768px) {
+  .footer {
+    padding: 60px 0 120px;
+  }
 }
 .footer__inner {
   display: flex;
@@ -1771,10 +1777,10 @@ h6,
 }
 .footer__inner .footer__logo {
   height: auto;
-  width: 100px;
 }
 .footer__inner .footer__logo .image__img {
-  max-width: 100%;
+  width: 100%;
+  max-width: 100px;
 }
 .footer .footer__block {
   justify-content: center;
@@ -1793,29 +1799,47 @@ h6,
 .footer__center .footer__signup {
   width: 100%;
 }
+.footer__center .footer__signup .signup__desc {
+  font-size: 1.3rem;
+  color: var(--c-white);
+  text-align: center;
+  width: 100%;
+  display: inherit;
+}
 .footer__center .footer__signup .wpforms-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 30px;
 }
 .footer__center .footer__signup .wpforms-container .wpforms-form {
   display: flex;
 }
+.footer__center .footer__signup .wpforms-container .wpforms-form .wpforms-field-container {
+  width: 75%;
+}
 .footer__center .footer__signup .wpforms-container .wpforms-form .wpforms-field-container .wpforms-field input.wpforms-field-medium {
-  max-width: none !important;
   border: 0;
   border-radius: 4px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
+  min-width: 300px !important;
+  max-width: 100%;
+}
+.footer__center .footer__signup .wpforms-container .wpforms-form .wpforms-submit-container {
+  margin-left: 10px;
 }
 .footer__center .footer__signup .wpforms-container .wpforms-form .wpforms-submit-container .wpforms-submit {
   height: 38px;
   border: 0;
   border-radius: 4px;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
   color: var(--c-white);
   background: var(--c-pink);
+  font-family: "Helvetica Neue Bold";
+  text-transform: uppercase;
+  width: 120px;
+}
+.footer__center .footer__privacy-msg {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
 }
 .footer__center .footer__credit {
   font-size: 1.3rem;
