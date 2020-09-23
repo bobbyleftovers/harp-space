@@ -19,6 +19,11 @@
 	&__content {
 		width: 100%;
 
+		div.wpforms-container-full .wpforms-form .wpforms-field-label-inline,
+		div.wpforms-container-full .wpforms-form .wpforms-field-description {
+			color: var(--c-black);
+		}
+
 		.wpforms-field-container {
 			display: flex;
 			flex-direction: column;

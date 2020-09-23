@@ -1710,6 +1710,10 @@ h6,
 .contact__content {
   width: 100%;
 }
+.contact__content div.wpforms-container-full .wpforms-form .wpforms-field-label-inline,
+.contact__content div.wpforms-container-full .wpforms-form .wpforms-field-description {
+  color: var(--c-black);
+}
 .contact__content .wpforms-field-container {
   display: flex;
   flex-direction: column;
