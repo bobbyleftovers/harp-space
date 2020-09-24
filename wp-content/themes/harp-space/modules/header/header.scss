@@ -6,10 +6,10 @@
   }
 
   &.is-scrolled-past {
-    top: 46px;
+    top: 0;
 
     @include size--m {
-      top: 32px;
+      top: 0;
     }
   }
 }

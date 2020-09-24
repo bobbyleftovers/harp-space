@@ -24,6 +24,23 @@
 			color: var(--c-black);
 		}
 
+		#wpforms-29-field_7-container {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+
+			#wpforms-29-field_7 {
+				order: 2;
+			}
+
+			.wpforms-field-description {
+				order: 1;
+				margin-bottom: 10px;
+				font-size: $copy;
+			}
+
+		}
+
 		.wpforms-field-container {
 			display: flex;
 			flex-direction: column;

@@ -6,7 +6,7 @@
 		justify-content: space-around;
 		margin-bottom: 80px;
 
-		@include size--m {
+		@include size--l {
 			flex-direction: row;
 			align-items: flex-start;
 			justify-content: space-around;
@@ -19,12 +19,14 @@
 			padding: 0 20px;
 			margin-bottom: 20px;
 
-			&:first-of-type {
-				padding-left: 0;
-			}
+			@include size--l {
+				&:first-of-type {
+					padding-left: 0;
+				}
 
-			&:last-of-type {
-				padding-right: 0;
+				&:last-of-type {
+					padding-right: 0;
+				}
 			}
 
 			&__header {
@@ -51,7 +53,7 @@
 				align-items: flex-start;
 				flex-direction: column;
 
-				@include size--m {
+				@include size--l {
 					align-items: center;
 					flex-direction: row;
 				}
@@ -168,7 +170,7 @@
 				font-family: $bold-cnd;
 				font-size: 2.4rem;
 
-				@include size--m {
+				@include size--l {
 					width: auto;
 					flex: 0.3;
 				}
@@ -178,7 +180,7 @@
 				color: var(--c-pink);
 				font-family: $bold-it;
 
-				@include size--m {
+				@include size--l {
 					flex: 1.6;
 					padding-left: 20px;
 				}
@@ -187,7 +189,7 @@
 			&__credits {
 				display: none;
 
-				@include size--m {
+				@include size--l {
 					flex: 1;
 					display: flex;
 					flex-direction: column;
@@ -195,7 +197,7 @@
 			}
 
 			&__duration {
-				@include size--m {
+				@include size--l {
 					flex: 0.25;
 				}
 			}

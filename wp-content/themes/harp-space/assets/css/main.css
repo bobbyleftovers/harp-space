@@ -917,11 +917,11 @@ h6,
   }
 }
 .logged-in .header.is-scrolled-past {
-  top: 46px;
+  top: 0;
 }
 @media (min-width: 768px) {
   .logged-in .header.is-scrolled-past {
-    top: 32px;
+    top: 0;
   }
 }
 
@@ -1359,10 +1359,11 @@ h6,
 .hero__inner {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
 }
 @media (min-width: 768px) {
   .hero__inner {
+    align-items: flex-start;
     flex-direction: row;
   }
 }
@@ -1371,10 +1372,14 @@ h6,
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .hero__cover {
+    align-items: flex-start;
+  }
 }
 .hero__cover .hero__image {
-  height: 480px;
   max-width: 400px;
   width: 100%;
   margin-bottom: 30px;
@@ -1384,6 +1389,7 @@ h6,
 }
 @media (min-width: 768px) {
   .hero__cover .hero__image {
+    height: 480px;
     max-width: 600px;
   }
 }
@@ -1511,7 +1517,7 @@ h6,
   justify-content: space-around;
   margin-bottom: 80px;
 }
-@media (min-width: 768px) {
+@media (min-width: 1000px) {
   .music__previews {
     flex-direction: row;
     align-items: flex-start;
@@ -1525,11 +1531,13 @@ h6,
   padding: 0 20px;
   margin-bottom: 20px;
 }
-.music__previews .preview:first-of-type {
-  padding-left: 0;
-}
-.music__previews .preview:last-of-type {
-  padding-right: 0;
+@media (min-width: 1000px) {
+  .music__previews .preview:first-of-type {
+    padding-left: 0;
+  }
+  .music__previews .preview:last-of-type {
+    padding-right: 0;
+  }
 }
 .music__previews .preview__header {
   padding-bottom: 10px;
@@ -1551,7 +1559,7 @@ h6,
   align-items: flex-start;
   flex-direction: column;
 }
-@media (min-width: 768px) {
+@media (min-width: 1000px) {
   .music__previews .preview__info {
     align-items: center;
     flex-direction: row;
@@ -1639,7 +1647,7 @@ h6,
   font-family: "Helvetica Neue Black Condensed";
   font-size: 2.4rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 1000px) {
   .music__track-listing .list__index {
     width: auto;
     flex: 0.3;
@@ -1649,7 +1657,7 @@ h6,
   color: var(--c-pink);
   font-family: "Helvetica Neue Bold Italic";
 }
-@media (min-width: 768px) {
+@media (min-width: 1000px) {
   .music__track-listing .list__title {
     flex: 1.6;
     padding-left: 20px;
@@ -1658,14 +1666,14 @@ h6,
 .music__track-listing .list__credits {
   display: none;
 }
-@media (min-width: 768px) {
+@media (min-width: 1000px) {
   .music__track-listing .list__credits {
     flex: 1;
     display: flex;
     flex-direction: column;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 1000px) {
   .music__track-listing .list__duration {
     flex: 0.25;
   }
@@ -1713,6 +1721,19 @@ h6,
 .contact__content div.wpforms-container-full .wpforms-form .wpforms-field-label-inline,
 .contact__content div.wpforms-container-full .wpforms-form .wpforms-field-description {
   color: var(--c-black);
+}
+.contact__content #wpforms-29-field_7-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.contact__content #wpforms-29-field_7-container #wpforms-29-field_7 {
+  order: 2;
+}
+.contact__content #wpforms-29-field_7-container .wpforms-field-description {
+  order: 1;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
 }
 .contact__content .wpforms-field-container {
   display: flex;

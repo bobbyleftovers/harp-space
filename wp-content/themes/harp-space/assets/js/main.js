@@ -356,6 +356,14 @@ var Music = /*#__PURE__*/function () {
           Object(_src_js_lib_utils__WEBPACK_IMPORTED_MODULE_0__["collapseSection"])(section);
         }
       });
+      window.addEventListener('resize', function () {
+        var section = document.querySelector('.list__wrap');
+        section.setAttribute('data-collapsed', 'true');
+
+        _this.el.querySelector('.btn-toggle-list').classList.remove('open');
+
+        Object(_src_js_lib_utils__WEBPACK_IMPORTED_MODULE_0__["collapseSection"])(section);
+      });
     }
   }, {
     key: "getFormattedTime",
@@ -378,11 +386,6 @@ var Music = /*#__PURE__*/function () {
         preview.querySelector('audio').currentTime = 0;
         preview.querySelector('.preview__timer').innerHTML = _this2.getFormattedTime(0);
       });
-    }
-  }, {
-    key: "toggleTracklist",
-    value: function toggleTracklist() {
-      console.log('toggle tracks');
     }
   }]);
 

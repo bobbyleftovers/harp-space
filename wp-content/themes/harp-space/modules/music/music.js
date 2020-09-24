@@ -48,6 +48,13 @@ class Music {
 				collapseSection(section)
 			}
 		});
+
+		window.addEventListener('resize', () => {
+			const section = document.querySelector('.list__wrap');
+			section.setAttribute('data-collapsed', 'true')
+			this.el.querySelector('.btn-toggle-list').classList.remove('open')
+			collapseSection(section)
+		})
 	}
 
 	getFormattedTime (ts) {
@@ -66,10 +73,6 @@ class Music {
 			preview.querySelector('audio').currentTime = 0
 			preview.querySelector('.preview__timer').innerHTML = this.getFormattedTime(0)
 		})
-	}
-
-	toggleTracklist () {
-		console.log('toggle tracks')
 	}
 }
 
