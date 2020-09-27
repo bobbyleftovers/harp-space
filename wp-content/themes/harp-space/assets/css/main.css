@@ -900,6 +900,11 @@ h6,
   color: var(--c-pink);
 }
 
+.scroll-link {
+  color: var(--c-pink);
+  font-family: "Helvetica Neue Bold";
+}
+
 /***
 * the right way is below but i'm not done developing it.
 * it uses postCSS but the config is not done
@@ -1480,6 +1485,7 @@ h6,
 }
 .hero__details .details__liner-notes {
   margin-bottom: 30px;
+  padding-top: 10px;
 }
 .hero__details .details__cta {
   display: flex;
@@ -1675,7 +1681,7 @@ h6,
 }
 @media (min-width: 1000px) {
   .music__track-listing .list__duration {
-    flex: 0.25;
+    flex: 0.3;
   }
 }
 
@@ -1764,7 +1770,6 @@ h6,
   border: 0 !important;
   border-radius: 4px !important;
   font-family: "Helvetica Neue Regular" !important;
-  text-transform: uppercase;
 }
 .contact__content .wpforms-submit-container {
   width: 100%;

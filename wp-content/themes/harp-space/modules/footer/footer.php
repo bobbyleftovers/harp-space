@@ -13,7 +13,7 @@ $bk_image = wp_get_attachment_image_src( carbon_get_theme_option( 'background_im
     </div>
     <div class="footer__center">
       <div class="footer__signup">
-        <span class="signup__desc">Subscribe to our newletter</span>
+        <span class="signup__desc">Subscribe to our newsletter</span>
         <?= do_shortcode(carbon_get_theme_option('signup_shortcode')) ?>
       </div>
       <span class="footer__privacy-msg">

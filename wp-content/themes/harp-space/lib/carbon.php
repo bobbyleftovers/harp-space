@@ -19,7 +19,8 @@ function attach_theme_options() {
                     Field::make( 'set', 'social_links', 'Social Links' )
                         ->add_options( array(
                             'instagram' => 'Instagram',
-                            'twitter' => 'Twitter'
+                            'twitter' => 'Twitter',
+                            'reddit' => 'Reddit',
                         ) ),
                     Field::make( 'text', 'social_url', 'URL' )
                 )),
@@ -52,7 +53,9 @@ function attach_page_fields() {
                 )),
             Field::make( 'text', 'hero_cta_header', 'CTA Header' ),
             Field::make( 'text', 'hero_cta_subheader', 'CTA Subheader' ),
-            Field::make( 'urlpicker', 'hero_cta', 'Hero CTA' )
+            Field::make( 'urlpicker', 'hero_cta', 'Hero CTA' ),
+            Field::make( 'file', 'pdf_download', 'Liner Notes' )
+                ->set_value_type('url')
         ));
     Container::make( 'post_meta', 'Music' )
         ->where( 'post_type', '=', 'page' )

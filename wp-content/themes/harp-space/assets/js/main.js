@@ -7048,7 +7048,18 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function scrollNav() {
-  var links = document.querySelectorAll('.menu-item a');
+  var navLinks = document.querySelectorAll('.menu-item a');
+  navLinks.forEach(function (link) {
+    var href = link.getAttribute('href');
+
+    if (href[0] === '#' && document.querySelector(href)) {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        Object(_lib_scroll_to__WEBPACK_IMPORTED_MODULE_0__["default"])(document.querySelector(href));
+      });
+    }
+  });
+  var links = document.querySelectorAll('a.scroll-link');
   links.forEach(function (link) {
     var href = link.getAttribute('href');
 
