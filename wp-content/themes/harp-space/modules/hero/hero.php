@@ -28,12 +28,14 @@ $listen_links .= '</div>';
           'image' => $h1_image,
           'class' => 'details__title-img'
         ));?>
-        <div class="details__copy"><?= $copy ?></div><?php
-        the_module('image', array(
-          'image' => $secondary_image,
-          'class' => 'details__liner-notes',
-          'content' => '<span class="details__copy-eyebrow">'.$liner_eyebrow.'</span>'
-        ));?>
+        <div class="details__copy"><?= $copy ?></div>
+        <a href="<?= carbon_get_the_post_meta('pdf_download') ?>" class="details__download"><?php
+          the_module('image', array(
+            'image' => $secondary_image,
+            'class' => 'details__liner-notes',
+            'content' => '<span class="details__copy-eyebrow">'.$liner_eyebrow.'</span>'
+          ));?>
+        </a>
         
         <div class="details__cta"><?php
           $cta = carbon_get_the_post_meta('hero_cta'); ?>
