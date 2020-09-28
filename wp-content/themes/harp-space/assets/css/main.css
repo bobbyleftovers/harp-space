@@ -1493,8 +1493,8 @@ h6,
   align-items: center;
   width: 100%;
 }
-.hero__details .details__cta .details-cta__header {
-  margin-bottom: 0;
+.hero__details .details__cta .button, .hero__details .details__cta .contact__content .wpforms-submit-container .wpforms-submit, .contact__content .wpforms-submit-container .hero__details .details__cta .wpforms-submit {
+  margin-bottom: 10px;
 }
 .hero__details .details__cta .details-cta__subheader {
   font-family: "Helvetica Neue Regular";
