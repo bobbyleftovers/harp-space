@@ -47,6 +47,7 @@ $tracks = new WP_Query($args);?>
 		<button class="button btn-toggle-list"><span>View Track Listing</span> <i class="toggle-icon fas fa-caret-up"></i></button>
 		<div class="list__wrap" data-collapsed="true"><?php
 			if($tracks->have_posts())	{
+				echo '<div class="list__body">';
 				while($tracks->have_posts()){
 					$tracks->the_post();
 					$credits = carbon_get_the_post_meta('track_credits'); ?>
@@ -61,6 +62,7 @@ $tracks = new WP_Query($args);?>
 						<span class="list__duration"> Length: <?= carbon_get_the_post_meta('track_duration') ?></span>
 					</div><?php
 				}
+				echo '</div>';
 				wp_reset_postdata();
 			}?>
 		</div>
