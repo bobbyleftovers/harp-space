@@ -46,11 +46,20 @@ function attach_page_fields() {
             Field::make( 'rich_text', 'hero_copy', 'Hero Copy' ),
             Field::make( 'text', 'liner_eyebrow', 'Secondary Image Eyebrow' ),
             Field::make( 'image', 'secondary_image', 'Secondary Image' ),
+            Field::make( 'checkbox', 'show_listen_links', 'Show Streaming Links' )
+                ->set_option_value( 'yes' ),
             Field::make( 'complex', 'listen_links', 'Listen Links' )
                 ->add_fields( array(
                     Field::make( 'image', 'icon', 'Icon' ),
                     Field::make( 'urlpicker', 'listen_url', 'Link' )
-                )),
+                ))
+                ->set_conditional_logic( array(
+                    'relation' => 'AND', // Optional, defaults to "AND"
+                    array(
+                        'field' => 'show_listen_links',
+                        'value' => true, // Optional, defaults to "". Should be an array if "IN" or "NOT IN" operators are used.
+                    )
+                ))  ,
             Field::make( 'text', 'hero_cta_header', 'CTA Header' ),
             Field::make( 'text', 'hero_cta_subheader', 'CTA Subheader' ),
             Field::make( 'urlpicker', 'hero_cta', 'Hero CTA' ),

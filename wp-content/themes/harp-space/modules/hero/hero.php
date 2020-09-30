@@ -1,16 +1,20 @@
 <?php
 $bk_image = wp_get_attachment_image_src( carbon_get_theme_option( 'background_image' ), 'full' )[0];
-$listen_links = '<div class="hero__link-set">';
-foreach($link_set as $link){
-  $listen_links .= '<a href="/" class="link-set__link" target="_blank">';
-  $listen_links .= get_module('image', array(
-    'image' => $link['icon'],
-    'class' => 'link-set__image',
-    'contain' => true
-  ));
-  $listen_links .= '</a>';
+$listen_links = '';
+
+if (carbon_get_the_post_meta( 'show_listen_links' )) {
+  $listen_links = '<h2 class="hero__cover-subhead">'.$cover_subhead.'</h2><div class="hero__link-set">';
+  foreach($link_set as $link){
+    $listen_links .= '<a href="/" class="link-set__link" target="_blank">';
+    $listen_links .= get_module('image', array(
+      'image' => $link['icon'],
+      'class' => 'link-set__image',
+      'contain' => true
+    ));
+    $listen_links .= '</a>';
+  }
+  $listen_links .= '</div>';
 }
-$listen_links .= '</div>';
 ?>
 
 <section class="hero <?= $class; ?>" data-module="hero" style="background-image: url('<?= $bk_image ?>')">
@@ -19,7 +23,7 @@ $listen_links .= '</div>';
       the_module('image', array(
         'image' => $image,
         'class' => 'hero__image',
-        'content' => '<h2 class="hero__cover-subhead">'.$cover_subhead.'</h2>'.$listen_links
+        'content' => $listen_links
       ));?>
     </div>
     <div class="hero__details">
