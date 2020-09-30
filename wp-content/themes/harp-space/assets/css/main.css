@@ -1124,6 +1124,9 @@ h6,
   padding: 10px 20px;
   background: var(--c-black-trans);
 }
+.slideout__content .share__link {
+  color: var(--c-pink);
+}
 
 .slideout__menu .menu-item {
   display: block;
