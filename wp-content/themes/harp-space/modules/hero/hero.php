@@ -5,7 +5,7 @@ $listen_links = '';
 if (carbon_get_the_post_meta( 'show_listen_links' )) {
   $listen_links = '<h2 class="hero__cover-subhead">'.$cover_subhead.'</h2><div class="hero__link-set">';
   foreach($link_set as $link){
-    $listen_links .= '<a href="/" class="link-set__link" target="_blank">';
+    $listen_links .= '<a href="'.$link['listen_url']['url'].'" class="link-set__link" target="_blank">';
     $listen_links .= get_module('image', array(
       'image' => $link['icon'],
       'class' => 'link-set__image',
