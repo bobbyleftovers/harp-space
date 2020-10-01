@@ -1692,9 +1692,13 @@ h6,
 .video {
   position: relative;
 }
+.video__header {
+  top: -80px;
+  position: relative;
+}
 .video__wrap {
+  padding-bottom: 47.8%;
   /* falls back to 16/9, but otherwise uses ratio from HTML */
-  padding-bottom: calc(var(--aspect-ratio, .5625) * 100%);
 }
 .video iframe {
   border: 0;
