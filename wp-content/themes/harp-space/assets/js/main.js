@@ -94,6 +94,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
+	"./footer/footer.js": "./modules/footer/footer.js",
 	"./header/header.js": "./modules/header/header.js",
 	"./hero/hero.js": "./modules/hero/hero.js",
 	"./image/image.js": "./modules/image/image.js",
@@ -120,6 +121,26 @@ webpackContext.keys = function webpackContextKeys() {
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
 webpackContext.id = "./modules sync recursive ^\\.\\/.*\\.js$";
+
+/***/ }),
+
+/***/ "./modules/footer/footer.js":
+/*!**********************************!*\
+  !*** ./modules/footer/footer.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _src_js_lib_scroll_to__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../src/js/lib/scroll-to */ "./src/js/lib/scroll-to.js");
+
+/* harmony default export */ __webpack_exports__["default"] = (function (el) {
+  el.querySelector('.back-to-top').addEventListener('click', function (e) {
+    e.preventDefault();
+    Object(_src_js_lib_scroll_to__WEBPACK_IMPORTED_MODULE_0__["default"])();
+  });
+});
 
 /***/ }),
 
@@ -214,7 +235,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (function (el) {
-  console.log('hero', el);
   var header = document.querySelector('header.header');
   window.addEventListener('resize', function () {
     setPadding();
@@ -222,7 +242,6 @@ __webpack_require__.r(__webpack_exports__);
   setPadding();
 
   function setPadding() {
-    console.log(header.offsetHeight);
     el.style.paddingTop = header.offsetHeight + 'px';
   }
 });
@@ -7797,6 +7816,8 @@ __webpack_require__.r(__webpack_exports__);
 function scrollTo(el) {
   if (el) {
     Object(_dom__WEBPACK_IMPORTED_MODULE_0__["scrollTop"])(Object(_dom__WEBPACK_IMPORTED_MODULE_0__["getTopOffset"])(el) - 70);
+  } else {
+    Object(_dom__WEBPACK_IMPORTED_MODULE_0__["scrollTop"])(0);
   }
 }
 

@@ -2,7 +2,13 @@
 $credits = carbon_get_theme_option( 'site_credits' );
 $bk_image = wp_get_attachment_image_src( carbon_get_theme_option( 'background_image' ), 'full' )[0];?>
 
-<footer class="footer" style="background-image: url('<?= $bk_image ?>')">
+<footer class="footer" data-module="footer" style="background-image: url('<?= $bk_image ?>')">
+  <div class="footer__page-tools container">
+    <a class="button button--clear button--small back-to-top">
+      <i class="fas fa-arrow-up"></i>
+      <span>Top</span>
+    </a>
+  </div>
   <div class="footer__inner container">
     <div class="footer__logo"><?php
         the_module('image', array(

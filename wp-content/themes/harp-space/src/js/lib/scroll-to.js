@@ -7,5 +7,7 @@ import getTarget from './get-hash-target.js'
 export default function scrollTo (el) {
     if (el) {
       scrollTop(getTopOffset(el) - 70)
+    } else {
+      scrollTop(0)
     }
 }

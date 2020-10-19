@@ -733,6 +733,15 @@ h6,
   color: var(--c-black);
   background-color: var(--c-white);
 }
+.button--clear {
+  color: var(--pink);
+  background: transparent;
+  border: 3px solid var(--c-pink);
+}
+.button--small {
+  font-size: calc($button - 3px);
+  padding: 0.3em;
+}
 .button[disabled], .contact__content .wpforms-submit-container [disabled].wpforms-submit {
   pointer-events: none;
   opacity: 0.5;
@@ -1818,6 +1827,26 @@ h6,
 .footer__inner .footer__logo .image__img {
   width: 100%;
   max-width: 100px;
+}
+.footer__page-tools {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.footer__page-tools .button, .footer__page-tools .contact__content .wpforms-submit-container .wpforms-submit, .contact__content .wpforms-submit-container .footer__page-tools .wpforms-submit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.footer__page-tools .button span, .footer__page-tools .contact__content .wpforms-submit-container .wpforms-submit span, .contact__content .wpforms-submit-container .footer__page-tools .wpforms-submit span,
+.footer__page-tools .button .fa-arrow-up,
+.footer__page-tools .contact__content .wpforms-submit-container .wpforms-submit .fa-arrow-up,
+.contact__content .wpforms-submit-container .footer__page-tools .wpforms-submit .fa-arrow-up {
+  color: var(--c-pink);
+}
+.footer__page-tools .button:hover, .footer__page-tools .contact__content .wpforms-submit-container .wpforms-submit:hover, .contact__content .wpforms-submit-container .footer__page-tools .wpforms-submit:hover {
+  background: transparent;
 }
 .footer .footer__block {
   justify-content: center;

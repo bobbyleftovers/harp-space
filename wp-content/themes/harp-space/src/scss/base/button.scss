@@ -27,6 +27,17 @@
     background-color: var(--c-white);
   }
 
+  &--clear {
+    color: var(--pink);
+    background: transparent;
+    border: 3px solid var(--c-pink);
+  }
+
+  &--small {
+    font-size: calc($button - 3px);
+    padding: 0.3em;
+  }
+
   &[disabled] {
     pointer-events: none;
     opacity: 0.5;

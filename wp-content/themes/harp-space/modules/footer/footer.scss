@@ -26,6 +26,28 @@
     }
   }
 
+  &__page-tools {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    .button {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      span,
+      .fa-arrow-up {
+        color: var(--c-pink);
+      }
+
+      &:hover {
+        background: transparent;
+      }
+    }
+  }
+
   .footer__block {
     justify-content: center;
     padding: calc(var(--padding-s) / 2);
