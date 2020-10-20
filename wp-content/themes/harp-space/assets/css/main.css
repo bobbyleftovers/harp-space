@@ -1838,6 +1838,18 @@ h6,
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  pointer-events: all;
+  position: fixed;
+  bottom: 20px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+.footer__page-tools .button.active, .footer__page-tools .contact__content .wpforms-submit-container .active.wpforms-submit, .contact__content .wpforms-submit-container .footer__page-tools .active.wpforms-submit {
+  opacity: 1;
+}
+.footer__page-tools .button.rel, .footer__page-tools .contact__content .wpforms-submit-container .rel.wpforms-submit, .contact__content .wpforms-submit-container .footer__page-tools .rel.wpforms-submit {
+  position: relative;
 }
 .footer__page-tools .button span, .footer__page-tools .contact__content .wpforms-submit-container .wpforms-submit span, .contact__content .wpforms-submit-container .footer__page-tools .wpforms-submit span,
 .footer__page-tools .button .fa-arrow-up,

@@ -136,9 +136,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _src_js_lib_scroll_to__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../src/js/lib/scroll-to */ "./src/js/lib/scroll-to.js");
 
 /* harmony default export */ __webpack_exports__["default"] = (function (el) {
-  el.querySelector('.back-to-top').addEventListener('click', function (e) {
+  var topBtn = el.querySelector('.back-to-top');
+  console.log(el.offsetTop);
+  topBtn.addEventListener('click', function (e) {
     e.preventDefault();
     Object(_src_js_lib_scroll_to__WEBPACK_IMPORTED_MODULE_0__["default"])();
+  });
+  window.addEventListener('scroll', function (evt) {
+    if (window.scrollY > 900) {
+      topBtn.classList.add('active');
+
+      if (window.scrollY <= el.offsetTop - el.offsetHeight) {
+        topBtn.classList.remove('rel');
+      }
+    } else if (window.scrollY < 900) {
+      topBtn.classList.remove('active');
+    }
+
+    if (window.scrollY >= el.offsetTop - el.offsetHeight) {
+      topBtn.classList.add('rel');
+    }
   });
 });
 
