@@ -1832,6 +1832,7 @@ h6,
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  pointer-events: none;
 }
 .footer__page-tools .button, .footer__page-tools .contact__content .wpforms-submit-container .wpforms-submit, .contact__content .wpforms-submit-container .footer__page-tools .wpforms-submit {
   display: flex;
@@ -1841,7 +1842,6 @@ h6,
   pointer-events: all;
   position: fixed;
   bottom: 20px;
-  pointer-events: none;
   opacity: 0;
   transition: opacity 300ms ease;
 }

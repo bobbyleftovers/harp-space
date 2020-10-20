@@ -30,6 +30,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    pointer-events: none;
 
     .button {
       display: flex;
@@ -39,7 +40,6 @@
       pointer-events: all;
       position: fixed;
       bottom: 20px;
-      pointer-events: none;
       opacity: 0;
       transition: opacity 300ms ease;
 
