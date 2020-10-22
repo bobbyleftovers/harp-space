@@ -1892,9 +1892,13 @@ h6,
 }
 .footer__center .footer__signup .wpforms-container .wpforms-form {
   display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
 }
 .footer__center .footer__signup .wpforms-container .wpforms-form .wpforms-field-container {
   width: 75%;
+  order: 1;
 }
 .footer__center .footer__signup .wpforms-container .wpforms-form .wpforms-field-container .wpforms-field input.wpforms-field-medium {
   border: 0;
@@ -1902,8 +1906,12 @@ h6,
   min-width: 300px !important;
   max-width: 100%;
 }
+.footer__center .footer__signup .wpforms-container .wpforms-form .wpforms-recaptcha-container {
+  order: 3;
+}
 .footer__center .footer__signup .wpforms-container .wpforms-form .wpforms-submit-container {
   margin-left: 10px;
+  order: 2;
 }
 .footer__center .footer__signup .wpforms-container .wpforms-form .wpforms-submit-container .wpforms-submit {
   height: 38px;

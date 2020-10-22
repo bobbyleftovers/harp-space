@@ -98,9 +98,13 @@
 
         .wpforms-form {
           display: flex;
+          flex-wrap: wrap;
+          align-items: flex-start;
+          justify-content: center;
 
           .wpforms-field-container {
             width: 75%;
+            order: 1;
 
             .wpforms-field {
               input.wpforms-field-medium {
@@ -112,8 +116,13 @@
             }
           }
 
+          .wpforms-recaptcha-container {
+            order: 3;
+          }
+
           .wpforms-submit-container {
             margin-left: 10px;
+            order: 2;
 
             .wpforms-submit {
               height: 38px;
