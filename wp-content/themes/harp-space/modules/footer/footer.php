@@ -15,7 +15,7 @@ $bk_image = wp_get_attachment_image_src( carbon_get_theme_option( 'background_im
           'image' => carbon_get_theme_option( 'logo' ),
           'class' => 'logo footer__logo'
         )); ?>
-        <span class="footer__copyright"><?= carbon_get_theme_option('copyright') ?></span>
+        <span class="footer__copyright">©<?= do_shortcode('[currentyear]') ?> HarpSpace Happening</span>
     </div>
     <div class="footer__center">
       <div class="footer__signup">

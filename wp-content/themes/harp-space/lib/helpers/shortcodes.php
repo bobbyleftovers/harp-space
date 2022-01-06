@@ -6,3 +6,7 @@ add_shortcode( 'icon-fire', function ( $atts, $content = "" ) {
         'class' => 'icon-fire shortcode-fire'
     ));
 });
+function currentyear() {
+    return date("Y");
+};
+add_shortcode( 'currentyear', 'currentyear');

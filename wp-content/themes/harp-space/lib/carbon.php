@@ -11,7 +11,7 @@ function attach_theme_options() {
         ->add_tab( 'Site Info', array(
             Field::make( 'text', 'album_title', 'Album Title' ),
             Field::make( 'image', 'logo', 'Logo' ),
-            Field::make( 'textarea', 'copyright', 'Copyright' ),
+            // Field::make( 'textarea', 'copyright', 'Copyright' ),
             Field::make( 'text', 'signup_shortcode', 'Signup Shortcode' ),
             Field::make( 'image', 'background_image', 'Background Image' ),
             Field::make( 'complex', 'shares_links', 'Share Links' )
