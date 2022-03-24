@@ -392,6 +392,7 @@ class Base_Theme extends BB_Theme {
   * Add critical css file to <head></head>
   */
   public function add_critical_css() {
+    $theme = wp_get_theme();
     $file = TEMPLATEPATH . '/assets/critical.min.css';
     $file_content = @file_get_contents( $file );
     // note that we might need to write a filter here to dynamically replace filepaths to font files
@@ -400,7 +401,7 @@ class Base_Theme extends BB_Theme {
     }
 
     // if not using load_rest_css use this
-    wp_enqueue_style('main_css', get_template_directory_uri() . '/assets/css/main.css?ver=' . $theme_ver );
+    wp_enqueue_style('main_css', get_template_directory_uri() . '/assets/css/main.css?ver=' . $theme->version );
   }
 
   /**

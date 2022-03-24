@@ -1,5 +1,6 @@
 <?php
 $module = 'data-module="image"';
+$alt = isset($alt) ? $alt : false;
 if (!empty($cover)) {
   $class .= ' image--cover';
 }

@@ -6,15 +6,9 @@
 ?>
 <?php get_header(); ?>
 <main id="main_content" class="" itemprop="mainContentOfPage" tabindex="-1">
-
-    <?php the_module('intro', array(
-        'class' => 'gutter-t',
-        'title' => get_field('404_headline', 'options')
-    )); ?>
-    <?php the_module('content', array(
-        'class' => 'gutter',
-        'content' => get_field('404_content', 'options')
-    )); ?>
-
+    <div class="container">
+        <h1 style="display: block; width: 100%; text-align: center; padding-top: 120px; padding-bottom: 40px">404</h1>
+        <span style="display: block; width: 100%; text-align: center; padding-bottom: 40px">This page does not exist. <a href="/">Return to home</a>.</span>
+    </div>
 </main>
 <?php get_footer(); ?>
